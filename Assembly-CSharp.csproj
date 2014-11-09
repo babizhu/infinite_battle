@@ -53,6 +53,7 @@
      <Compile Include="Assets\script\monster\AbstractMonster.cs" />
      <Compile Include="Assets\script\monster\Monster1.cs" />
      <Compile Include="Assets\script\player\Player.cs" />
+     <Compile Include="Assets\script\player\ScoreManager.cs" />
      <Compile Include="Assets\script\sound\Sound.cs" />
      <Compile Include="Assets\script\trap\FireTrap.cs" />
      <Compile Include="Assets\script\trap\FireTrapClick.cs" />
