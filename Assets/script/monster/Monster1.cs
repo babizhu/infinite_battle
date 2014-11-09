@@ -51,6 +51,7 @@ public class Monster1 : AbstractMonster {
         Sound.getInstance().play(hit);
         SetPostion();
         Hp = 100;
+        Player.getInstance().addScore(3);
         
     }
 }
