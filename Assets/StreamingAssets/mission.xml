@@ -1,14 +1,33 @@
 <missions>
 
-  <mission id="1">
-    
-    <wave delaySecond="0">
-      <monsterId position="3">1</monsterId>            
+  <mission>
+    <id>1</id>
+    <name>教学关卡</name>
+    <wave>
+      <delaySecond>2</delaySecond>
+      <monster>1,3</monster>      <!--怪物id,出现的行-->      
     </wave>
-    <wave delaySecond="5">
-      <monsterId position="3">1</monsterId>      
-      <monsterId position="5">1</monsterId>      
+    <wave>
+      <delaySecond>5</delaySecond>
+      <monster>1,3</monster>
+      <monster>1,5</monster>      
     </wave>
     
-  </mission> 
+  </mission>
+
+  <mission>
+    <id>2</id>
+    <name>教学关卡2</name>
+    <wave>
+      <delaySecond>10</delaySecond>
+      <monster>1,3</monster>
+      <!--怪物id,出现的行-->
+    </wave>
+    <wave>
+      <delaySecond>15</delaySecond>
+      <monster>1,4</monster>
+      <monster>1,5</monster>
+    </wave>
+
+  </mission>
 </missions>
