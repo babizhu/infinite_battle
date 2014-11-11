@@ -1,0 +1,14 @@
+<missions>
+
+  <mission id="1">
+    
+    <wave delaySecond="0">
+      <monsterId position="3">1</monsterId>            
+    </wave>
+    <wave delaySecond="5">
+      <monsterId position="3">1</monsterId>      
+      <monsterId position="5">1</monsterId>      
+    </wave>
+    
+  </mission> 
+</missions>

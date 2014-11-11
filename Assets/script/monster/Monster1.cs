@@ -14,7 +14,7 @@ public class Monster1 : AbstractMonster {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         float moveAmt = Speed * Time.deltaTime;
         transform.position -= Vector3.right * moveAmt;
 

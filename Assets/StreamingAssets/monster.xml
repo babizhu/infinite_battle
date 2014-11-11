@@ -1,0 +1,17 @@
+<monsters>
+
+  <monster>
+    <id>1</id>
+    <name>小怪1</name>
+    <hp>100</hp>
+    <speed>10</speed>
+  </monster>
+  
+  <monster>
+    <id>2</id>
+    <name>小怪2</name>
+    <hp>200</hp>
+    <speed>11</speed>
+    
+  </monster>
+</monsters>
