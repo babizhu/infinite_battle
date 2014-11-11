@@ -46,15 +46,23 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\script\config\MissionTemplet.cs" />
+     <Compile Include="Assets\script\config\MissionTempletConfig.cs" />
+     <Compile Include="Assets\script\config\MonsterTemplet.cs" />
+     <Compile Include="Assets\script\config\MonsterTempletConfig.cs" />
+     <Compile Include="Assets\script\config\MonsterWithPosition.cs" />
+     <Compile Include="Assets\script\config\WaveTemplet.cs" />
      <Compile Include="Assets\script\input\ClickScreen.cs" />
      <Compile Include="Assets\script\input\IClickEvent.cs" />
      <Compile Include="Assets\script\input\IClickEvent2.cs" />
      <Compile Include="Assets\script\misc\ShowStatus.cs" />
+     <Compile Include="Assets\script\mission\MonsterSpawn.cs" />
      <Compile Include="Assets\script\monster\AbstractMonster.cs" />
      <Compile Include="Assets\script\monster\Monster1.cs" />
      <Compile Include="Assets\script\player\Player.cs" />
      <Compile Include="Assets\script\player\ScoreManager.cs" />
      <Compile Include="Assets\script\sound\Sound.cs" />
+     <Compile Include="Assets\script\test\XmlTest.cs" />
      <Compile Include="Assets\script\trap\FireTrap.cs" />
      <Compile Include="Assets\script\trap\FireTrapClick.cs" />
      <Compile Include="Assets\script\weapon\AbstractWeapon.cs" />
