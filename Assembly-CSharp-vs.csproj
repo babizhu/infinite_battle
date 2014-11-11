@@ -49,7 +49,7 @@
      <Compile Include="Assets\script\input\ClickScreen.cs" />
      <Compile Include="Assets\script\input\IClickEvent.cs" />
      <Compile Include="Assets\script\input\IClickEvent2.cs" />
-     <Compile Include="Assets\script\misc\ShowFPS.cs" />
+     <Compile Include="Assets\script\misc\ShowStatus.cs" />
      <Compile Include="Assets\script\monster\AbstractMonster.cs" />
      <Compile Include="Assets\script\monster\Monster1.cs" />
      <Compile Include="Assets\script\player\Player.cs" />
@@ -60,6 +60,8 @@
      <Compile Include="Assets\script\weapon\AbstractWeapon.cs" />
      <Compile Include="Assets\script\weapon\Arrow1.cs" />
      <Compile Include="Assets\script\weapon\Bow2.cs" />
+     <None Include="Assets\StreamingAssets\mission.xml" />
+     <None Include="Assets\StreamingAssets\monster.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
