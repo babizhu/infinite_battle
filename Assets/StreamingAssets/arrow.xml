@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<arrows xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <arrow>
+		<id>1</id>
+		<name>普通箭矢</name>
+		<prefab>arrow1</prefab>
+		<attack>30</attack>
+		<speed>12</speed>
+    <posX>0</posX>
+    <posY>0</posY>  
+   
+	</arrow>
+	<arrow>
+		<id>2</id>
+		<name>激光炮</name>
+		<prefab>magicBomb</prefab>
+    <attack>100</attack>
+    <speed>10</speed>
+    <posX>0</posX>
+    <posY>0</posY>
+	</arrow>
+</arrows>

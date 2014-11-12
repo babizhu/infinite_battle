@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Bow2 : AbstractWeapon
 {
-
-
     public GameObject arrow;
 
     void Awake()

@@ -9,6 +9,10 @@ public class SwitchWeapon : IClickEvent
     public GameObject magicWeapon;
 
     /**
+     * 切换武器需要旋转，在旋转的时候是不能在接受点击命令的
+     */
+    private bool canClick = true;
+    /**
      * 目标角度
      */
     private int targetAngle = 180;
@@ -24,9 +28,11 @@ public class SwitchWeapon : IClickEvent
 
     public override bool click(GameObject prevChoose)
     {
-        //magicWeapon.SetActive(!magicWeapon.activeSelf);
-        StartCoroutine(rotate());  
-        
+        if (canClick)
+        {
+            canClick = false;
+            StartCoroutine(rotate());
+        }
         return false;
     }
 
@@ -45,7 +51,7 @@ public class SwitchWeapon : IClickEvent
      */
     private IEnumerator rotate()
     {
-        setCurrentWeapon(true);
+        setCurrentWeapon();
         while ((int)weaponGroup.eulerAngles.z != targetAngle)//我操，必须转成整型，好心塞
         {
             //print(weaponGroup.eulerAngles.z + "=" + targetAngle + "?" + (weaponGroup.eulerAngles.z == targetAngle));
@@ -55,25 +61,18 @@ public class SwitchWeapon : IClickEvent
         }
         
         toggle();
-        setCurrentWeapon(false);
+        
     }
 
     /**
      * 把放到后面的weapon设置为无效，把放到前面的weapon设置为有效
      */
-    private void setCurrentWeapon(bool isBegin){
-        if (isBegin)
-        {
-            print("begin");
-            if (magicWeapon.activeSelf) magicWeapon.SetActive(false);
-            else phyWeapon.SetActive(false);
-        }
-        else
-        {
-            print("end");
-            if (!phyWeapon.activeSelf) magicWeapon.SetActive(true);
-            else phyWeapon.SetActive(true);
-        }
+    private void setCurrentWeapon(){
+        
+            magicWeapon.SetActive(true);
+        
+            phyWeapon.SetActive(true);
+        
        // magicWeapon.SetActive(!magicWeapon.activeSelf);
         //phyWeapon.SetActive(!phyWeapon.activeSelf);
         //print(weaponGroup.localRotation.z);
@@ -95,11 +94,15 @@ public class SwitchWeapon : IClickEvent
         if (targetAngle == 0)
         {
             targetAngle = 180;
+            phyWeapon.SetActive(false);
         }
         else
         {
             targetAngle = 0;
+            magicWeapon.SetActive(false);
+            
         }
+        canClick = true;
     }
 
 

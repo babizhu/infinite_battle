@@ -13,14 +13,14 @@
       <monster>1,4</monster>
     </wave>
     <wave>
-      <delaySecond>5</delaySecond>
+      <delaySecond>1</delaySecond>
       <monster>1,3</monster>
       <monster>1,4</monster>
       <monster>1,3</monster>
       <monster>1,3</monster>
     </wave>
     <wave>
-      <delaySecond>5</delaySecond>
+      <delaySecond>1</delaySecond>
       <monster>1,3</monster>
       <monster>1,3</monster>
       <monster>1,3</monster>

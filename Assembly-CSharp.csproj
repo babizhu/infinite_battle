@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\script\config\ArrowTemplet.cs" />
+     <Compile Include="Assets\script\config\ArrowTempletConfig.cs" />
      <Compile Include="Assets\script\config\MissionTemplet.cs" />
      <Compile Include="Assets\script\config\MissionTempletConfig.cs" />
      <Compile Include="Assets\script\config\MonsterTemplet.cs" />
@@ -70,6 +72,7 @@
      <Compile Include="Assets\script\weapon\Bow2.cs" />
      <Compile Include="Assets\script\weapon\MagicBomb.cs" />
      <Compile Include="Assets\script\weapon\SwitchWeapon.cs" />
+     <None Include="Assets\StreamingAssets\arrow.xml" />
      <None Include="Assets\StreamingAssets\mission.xml" />
      <None Include="Assets\StreamingAssets\monster.xml" />
   </ItemGroup>
