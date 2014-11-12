@@ -35,7 +35,7 @@ public class ClickScreen : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonDown(0))
         {
             //你问我为什么会有vector3？因为ScreenToWorldPoint没有返回v2的重载！！！
             //当然，不同于3D，2D不会用ray，所以这里直接ScreenToWorldPoint（屏幕坐标转世界坐标），发出地为鼠标位置
@@ -50,7 +50,7 @@ public class ClickScreen : MonoBehaviour {
             if (hit.collider != null)
             {
                 //如果碰到些什么，嘿嘿···
-                print(hit.transform.name + " width is " + hit.transform.localScale.x);
+                //print(hit.transform.name + " width is " + hit.transform.localScale.x);
 
                 IClickEvent clickEvent = hit.transform.gameObject.GetComponent<IClickEvent>();
                 //IClickEvent clickEvent = hit.transform.gameObject.GetComponent("IClickEvent") as IClickEvent;
@@ -80,7 +80,7 @@ public class ClickScreen : MonoBehaviour {
 
 
 
-            print("prevChoose=" + prevChoose);
+            //print("prevChoose=" + prevChoose);
         }
     }
     //void OnMouseDown()

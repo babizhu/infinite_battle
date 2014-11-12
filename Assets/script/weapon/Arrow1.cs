@@ -11,7 +11,7 @@ public class Arrow1 : MonoBehaviour
 
     public int attackDamage = 1;
 
-    public static int miss = 0;
+    //public static int miss = 0;
 
     void Awake()
     {

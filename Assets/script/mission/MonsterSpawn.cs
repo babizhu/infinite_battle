@@ -30,11 +30,11 @@ public class MonsterSpawn : MonoBehaviour
 
     private void spawnWave(WaveTemplet wt)
     {
-        int[] xOffset = new int[5];//记录怪物在x轴出现的偏移量
+        int[] xOffset = new int[5];//记录各行怪物在x轴出现的次数
         foreach (MonsterWithPosition mp in wt.MonsterList)
         {
             MonsterTemplet t = mp.MonsterTemplet;
-            print(t.Name + "(" + t.Id + ") :" + mp.Row + "monster y is " + mp.Row * rowHeight + " hp=" + t.Hp);
+            print(t.Name + "(" + t.Id + ") : row=" + mp.Row + " y=" + origin.y + mp.Row * rowHeight + " hp=" + t.Hp);
             
             Vector3 pos = new Vector3(origin.x + xOffset[mp.Row] * xUnit,origin.y + mp.Row * rowHeight,0);
             xOffset[mp.Row] += 1;

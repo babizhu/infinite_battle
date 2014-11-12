@@ -32,7 +32,12 @@ public abstract class AbstractWeapon : MonoBehaviour {
      */
     protected void fire()
     {
+
         Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (target.x < -4)
+        {
+            return;
+        }
 
         Vector3 a2bDirection = target - transform.position;//获得一条从弓箭向量尾指向鼠标的向量。
 

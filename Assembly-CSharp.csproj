@@ -68,6 +68,8 @@
      <Compile Include="Assets\script\weapon\AbstractWeapon.cs" />
      <Compile Include="Assets\script\weapon\Arrow1.cs" />
      <Compile Include="Assets\script\weapon\Bow2.cs" />
+     <Compile Include="Assets\script\weapon\MagicBomb.cs" />
+     <Compile Include="Assets\script\weapon\SwitchWeapon.cs" />
      <None Include="Assets\StreamingAssets\mission.xml" />
      <None Include="Assets\StreamingAssets\monster.xml" />
   </ItemGroup>

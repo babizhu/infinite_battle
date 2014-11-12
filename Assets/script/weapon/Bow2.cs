@@ -28,11 +28,6 @@ public class Bow2 : AbstractWeapon
 
     }
 
-    private void doMagicAttack()
-    {
-        //Instantiate(arrow, transform.position, transform.rotation);
-        //AudioSource.PlayClipAtPoint(hit, new Vector3());
-    }
 
 
 
