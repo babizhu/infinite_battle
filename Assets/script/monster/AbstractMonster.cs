@@ -51,6 +51,25 @@ public abstract class AbstractMonster : MonoBehaviour
     }
 
 
+   
     abstract public void die();
+
+    /**
+     * 到达城墙后，开始攻击
+     */
+    abstract public void attack();
+    /**
+     * 应用模板数据
+     */
+    public void applyTemplet(MonsterTemplet templet)
+    {
+        Speed = templet.Speed;
+        Hp = templet.Hp;
+    }
+
+    public bool isDie()
+    {
+        return hp <= 0;
+    }
 }
 	

@@ -59,23 +59,23 @@ public class MissionTempletConfig {
         {
             MissionTemplet t = new MissionTemplet();
             //Debug.Log(xe.Name);
-            foreach (XmlElement x1 in xe.ChildNodes)
+            foreach (XmlNode x1 in xe.ChildNodes)
             {
                 //Debug.Log(x1.Name);
                 if (x1.Name == "name") t.Name = x1.InnerText;
                 else if (x1.Name == "id") t.Id = int.Parse(x1.InnerText);
                 else if (x1.Name == "wave") t.Waves.Add(parseWave(x1));
             }
-            Debug.Log(t.ToString());
+            //Debug.Log(t.ToString());
             data.Add(t.Id, t);
-            Debug.Log(data.Count);
+            
 
 
         }
 
     }
 
-    private WaveTemplet parseWave(XmlElement x1)
+    private WaveTemplet parseWave(XmlNode x1)
     {
         
         WaveTemplet waveTemplet = new WaveTemplet();
@@ -91,7 +91,7 @@ public class MissionTempletConfig {
                 int position = int.Parse(arr[1]);
                 MonsterWithPosition mwp = new MonsterWithPosition();
                 mwp.MonsterTemplet = MonsterTempletConfig.getInstance().get(monsterId);
-                mwp.Position = position;
+                mwp.Row = position;
                 waveTemplet.MonsterList.Add(mwp);
                 
             }

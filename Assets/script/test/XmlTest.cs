@@ -20,6 +20,8 @@ public class XmlTest : MonoBehaviour {
 
         GUI.Label(new Rect(0, 50, 200, 200), MissionTempletConfig.getInstance().get(1).Name);
         GUI.Label(new Rect(0, 100, 200, 200), MonsterTempletConfig.getInstance().get(154).Name);
+        MonsterTemplet t = MonsterTempletConfig.getInstance().get(1);
+        GUI.Label(new Rect(0, 150, 200, 200), t.Name + " speed=" + t.Speed);
 
     }
 }

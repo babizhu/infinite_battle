@@ -3,14 +3,12 @@ using System.Collections;
 
 public class Monster1 : AbstractMonster {
 
-    public float speedMin = 1;
-    public float speedMax = 2;
-    
+ 
 
 	// Use this for initialization
 	void Start () {
-        Hp = 100;
-        SetPostion();
+ 
+ //       SetPostion();
 	}
 	
 	// Update is called once per frame
@@ -20,7 +18,7 @@ public class Monster1 : AbstractMonster {
 
         if (transform.position.x < -4.3f)
         {
-            SetPostion();
+            attack();
             //Bow.Live--;;
 
             //if( Bow.Live == 0 ){
@@ -29,29 +27,39 @@ public class Monster1 : AbstractMonster {
 
         }
 	}
-  
 
-    public void SetPostion()
-    {
+    //public void SetPostion()
+    //{
 
-        float y = Random.Range(-2.37f, 1.92f);
+    //    float y = Random.Range(-2.37f, 1.92f);
 
-        transform.position = new Vector3(5.87f, y, 0);
+    //    transform.position = new Vector3(5.87f, y, 0);
 
-        Speed = Random.Range(speedMin, speedMax);
-        
-    }
+    //    //Speed = Random.Range(speedMin, speedMax);
+
+    //}
 
 
 
     public override void die()
     {
-       // AudioSource.PlayClipAtPoint(hitTarget, new Vector3());
-
-        Sound.getInstance().play(hit);
-        SetPostion();
-        Hp = 100;
+        Sound.getInstance().play(hit);      
         Player.getInstance().addScore(3);
+        Destroy(gameObject);
         
     }
+
+    public override void attack()
+    {
+        // AudioSource.PlayClipAtPoint(hitTarget, new Vector3());
+
+        Sound.getInstance().play(hit);
+
+        Player.getInstance().beAttacked(this);
+        Player.getInstance().addScore(3);
+        Destroy(gameObject);
+
+    }
+
+
 }

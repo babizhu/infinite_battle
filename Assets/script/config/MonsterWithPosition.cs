@@ -7,22 +7,22 @@ using System.Text;
 public class MonsterWithPosition
 {
     private MonsterTemplet monsterTemplet;
-    private int position;
+    private int row;
 
     public MonsterTemplet MonsterTemplet
     {
         set { monsterTemplet = value; }
         get { return monsterTemplet; }
     }
-    public int Position
+    public int Row
     {
-        set { position = value; }
-        get { return position; }
+        set { row = value; }
+        get { return row; }
     }
 
     public override string ToString()
     {
-        string result = "MonsterTemplet=" + MonsterTemplet.Id + ",position=" + position;
+        string result = "MonsterTemplet=" + MonsterTemplet.Id + ",row=" + row;
         return result;
     }
 }

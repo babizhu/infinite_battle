@@ -7,7 +7,7 @@ public class Player {
     /**
      * 当前关卡
      */
-    private int currentMission;
+    private int currentMission=1;
     public int CurrentMission
     {
         get { return currentMission; }
@@ -50,5 +50,13 @@ public class Player {
     public void addScore( int addScore ){
         this.score += addScore;
         scoreManager.setScore(score);
+    }
+
+    /**
+     * 受到了攻击
+     */
+    internal void beAttacked(AbstractMonster monster)
+    {
+        Debug.Log("城墙防御受到了" + monster.name + "的攻击");
     }
 }

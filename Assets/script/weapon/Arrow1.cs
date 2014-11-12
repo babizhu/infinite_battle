@@ -49,7 +49,7 @@ public class Arrow1 : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
-        print(coll.name);
+        //print(coll.name);
         if (coll.tag == "monster")
         {
 
@@ -59,7 +59,8 @@ public class Arrow1 : MonoBehaviour
             AbstractMonster monster = coll.GetComponent<AbstractMonster>();
 
             monster.Hp -= attackDamage;
-            if (monster.Hp <= 0)
+            
+            if (monster.isDie())
             {
                 monster.die();
                 //Bow.Score += 10;
