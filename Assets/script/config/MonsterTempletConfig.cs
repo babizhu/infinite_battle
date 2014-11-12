@@ -11,11 +11,13 @@ public class MonsterTempletConfig
      */
     private const string fileName = "/monster.xml";
 #if UNITY_EDITOR
-    string filepath = Application.dataPath + "/StreamingAssets" + fileName;
+    //string filePath = Application.dataPath + "/StreamingAssets" + fileName;
+    string filePath = "file://" + UnityEngine.Application.streamingAssetsPath + fileName;
 #elif UNITY_IPHONE
-        string filepath = Application.dataPath +"/Raw"+fileName;
+        string filePath = Application.dataPath +"/Raw"+fileName;
 #elif UNITY_ANDROID
-       string filepath= "jar:file://" + Application.dataPath + "!/assets" + fileName;
+       //string filePath= "jar:file://" + Application.dataPath + "!/assets" + fileName;
+    string filePath = Application.streamingAssetsPath + fileName;
 
 #endif
 
@@ -37,30 +39,38 @@ public class MonsterTempletConfig
 
     private void init()
     {
-        if (File.Exists(filepath))
+        WWW www = new WWW(filePath);
+        while (!www.isDone) { }
+        //yield return www;
+        //all = www.text;
+        //Debug.Log("xml文件的内容为:" + www.text);
+        parseXml(www);
+
+
+    }
+    private void parseXml(WWW file)
+    {
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.LoadXml(file.text);
+        XmlNodeList nodeList = xmlDoc.SelectSingleNode("monsters").ChildNodes;
+
+
+        //遍历每一个节点，拿节点的属性以及节点的内容
+        foreach (XmlElement xe in nodeList)
         {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(filepath);
-            XmlNodeList nodeList = xmlDoc.SelectSingleNode("monsters").ChildNodes;
-            //遍历每一个节点，拿节点的属性以及节点的内容
-            foreach (XmlElement xe in nodeList)
+            MonsterTemplet t = new MonsterTemplet();
+
+            foreach (XmlElement x1 in xe.ChildNodes)
             {
-                MonsterTemplet t = new MonsterTemplet();
-                
-                foreach (XmlElement x1 in xe.ChildNodes)
-                {
-                    if (x1.Name == "name") t.Name = x1.InnerText;
-                    else if (x1.Name == "hp") t.Hp = int.Parse(x1.InnerText);
-                    else if (x1.Name == "id") t.Id = int.Parse(x1.InnerText);
-                }
-                data.Add(t.Id, t);
-                
+                if (x1.Name == "name") t.Name = x1.InnerText;
+                else if (x1.Name == "hp") t.Hp = int.Parse(x1.InnerText);
+                else if (x1.Name == "id") t.Id = int.Parse(x1.InnerText);
             }
-            
+            data.Add(t.Id, t);
+
         }
 
     }
-
 
     public MonsterTemplet get(int id)
     {

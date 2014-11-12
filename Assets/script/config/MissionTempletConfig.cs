@@ -5,16 +5,18 @@ using System.IO;
 using System.Xml;
 
 public class MissionTempletConfig {
-/**
+    /**
      * 配置文件名
      */
     private const string fileName = "/mission.xml";
 #if UNITY_EDITOR
-    string filepath = Application.dataPath + "/StreamingAssets" + fileName;
+    //string filePath = Application.dataPath + "/StreamingAssets" + fileName;
+    string filePath = "file://" + UnityEngine.Application.streamingAssetsPath + fileName;
 #elif UNITY_IPHONE
-        string filepath = Application.dataPath +"/Raw"+fileName;
+        string filePath = Application.dataPath +"/Raw"+fileName;
 #elif UNITY_ANDROID
-       string filepath= "jar:file://" + Application.dataPath + "!/assets" + fileName;
+       //string filePath= "jar:file://" + Application.dataPath + "!/assets" + fileName;
+    string filePath = Application.streamingAssetsPath + fileName;
 
 #endif
 
@@ -34,32 +36,41 @@ public class MissionTempletConfig {
         return m_instance;
     }
 
-    private void init()
+    public void init()
     {
-        if (File.Exists(filepath))
+        WWW www = new WWW(filePath);
+        while (!www.isDone) { }
+        //yield return www;
+            //all = www.text;
+        //Debug.Log("xml文件的内容为:" + www.text);
+        parseXml(www);    
+
+    }
+
+    private void parseXml(WWW file)
+    {
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.LoadXml(file.text);
+        XmlNodeList nodeList = xmlDoc.SelectSingleNode("missions").ChildNodes;
+
+
+        //遍历每一个节点，拿节点的属性以及节点的内容
+        foreach (XmlElement xe in nodeList)
         {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(filepath);
-            XmlNodeList nodeList = xmlDoc.SelectSingleNode("missions").ChildNodes;
-
-
-            //遍历每一个节点，拿节点的属性以及节点的内容
-            foreach (XmlElement xe in nodeList)
+            MissionTemplet t = new MissionTemplet();
+            //Debug.Log(xe.Name);
+            foreach (XmlElement x1 in xe.ChildNodes)
             {
-                MissionTemplet t = new MissionTemplet();
-                
-                foreach (XmlElement x1 in xe.ChildNodes)
-                {
-                    //Debug.Log(x1.Name);
-                    if (x1.Name == "name") t.Name = x1.InnerText;                   
-                    else if (x1.Name == "id") t.Id = int.Parse(x1.InnerText);
-                    else if (x1.Name == "wave") t.Waves.Add(parseWave( x1 ));
-                }
-                //Debug.Log(t.ToString());
-                data.Add(t.Id, t);
-                
+                //Debug.Log(x1.Name);
+                if (x1.Name == "name") t.Name = x1.InnerText;
+                else if (x1.Name == "id") t.Id = int.Parse(x1.InnerText);
+                else if (x1.Name == "wave") t.Waves.Add(parseWave(x1));
             }
-            
+            Debug.Log(t.ToString());
+            data.Add(t.Id, t);
+            Debug.Log(data.Count);
+
+
         }
 
     }
@@ -93,6 +104,7 @@ public class MissionTempletConfig {
 
     public MissionTemplet get(int id)
     {
+        
         return data[id];
     }
 
