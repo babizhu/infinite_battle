@@ -11,7 +11,7 @@ public abstract class AbstractArrow : MonoBehaviour {
     private Vector3 target = new Vector3();
     private float angle;
     //炮弹的出生地点，考虑到有些武器的炮管比较长
-    private Vector3 offsetPosition = new Vector3();
+    //private Vector3 offsetPosition = new Vector3();
 
     public float Speed{
         get{return speed;}
@@ -30,7 +30,7 @@ public abstract class AbstractArrow : MonoBehaviour {
         float y = Mathf.Sin(angle);
         target.x = 100 *x;
         target.y = 100* y;
-        print("offsetPosition.x=" + offsetPosition.x);
+        //print("offsetPosition.x=" + offsetPosition.x);
         Sound.getInstance().play(fire);
     }
 
@@ -49,6 +49,6 @@ public abstract class AbstractArrow : MonoBehaviour {
     {
         speed = templet.Speed;
         attack = templet.Attack;
-        offsetPosition = templet.OffsetPosition;
+        //offsetPosition = templet.OffsetPosition;
     }  
 }

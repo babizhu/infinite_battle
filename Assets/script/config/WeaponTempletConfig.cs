@@ -17,7 +17,8 @@ public class WeaponTempletConfig {
 #elif UNITY_ANDROID
        //string filePath= "jar:file://" + Application.dataPath + "!/assets" + fileName;
     string filePath = Application.streamingAssetsPath + fileName;
-
+#else
+string filePath = "file://" + UnityEngine.Application.streamingAssetsPath + fileName;
 #endif
 
     private Dictionary<int, WeaponTemplet> data = new Dictionary<int, WeaponTemplet>();

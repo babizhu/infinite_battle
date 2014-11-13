@@ -56,7 +56,7 @@ public class Monster1 : AbstractMonster {
         Sound.getInstance().play(hit);
 
         Player.getInstance().defend(this);
-        Player.getInstance().addScore(3);
+        //Player.getInstance().addScore(3);
         Destroy(gameObject);
 
     }

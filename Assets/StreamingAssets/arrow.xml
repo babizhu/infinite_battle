@@ -2,7 +2,7 @@
 <arrows>
   <arrow>
 		<id>1</id>
-		<name>木箭</name>
+		<name>黄金箭</name>
 		<prefab>arrow1</prefab>
 		<attack>30</attack>
 		<speed>12</speed>

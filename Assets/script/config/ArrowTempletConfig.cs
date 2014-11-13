@@ -10,14 +10,15 @@ public class ArrowTempletConfig {
      */
     private const string fileName = "/arrow.xml";
 #if UNITY_EDITOR
-    //string filePath = Application.dataPath + "/StreamingAssets" + fileName;
+    
     string filePath = "file://" + UnityEngine.Application.streamingAssetsPath + fileName;
 #elif UNITY_IPHONE
         string filePath = Application.dataPath +"/Raw"+fileName;
 #elif UNITY_ANDROID
        //string filePath= "jar:file://" + Application.dataPath + "!/assets" + fileName;
     string filePath = Application.streamingAssetsPath + fileName;
-
+#else
+    string filePath = "file://" + UnityEngine.Application.streamingAssetsPath + fileName;
 #endif
 
     private Dictionary<int, ArrowTemplet> data = new Dictionary<int, ArrowTemplet>();

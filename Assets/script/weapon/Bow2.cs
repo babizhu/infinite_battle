@@ -5,7 +5,13 @@ public class Bow2 : AbstractWeapon
 {
     //private Player player = Player.getInstance();
     // Update is called once per frame
-    
+
+    public Transform arrowPositionObject;
+    private Vector3 arrowPosition;
+
+    void Start(){
+        
+    }
     void Update()
     {
         if (Input.GetButton("Fire1"))
@@ -18,7 +24,13 @@ public class Bow2 : AbstractWeapon
     protected override void doNormalAttack()
     {
         
-        GameObject arrowObj = Instantiate(Arrow, transform.position, transform.rotation) as GameObject;
+        if (arrowPositionObject != null)
+        {
+            arrowPosition = arrowPositionObject.parent.TransformPoint(arrowPositionObject.localPosition);
+        }else{
+            arrowPosition = transform.position;
+        }
+        GameObject arrowObj = Instantiate(Arrow, arrowPosition, transform.rotation) as GameObject;
         AbstractArrow arrow = arrowObj.GetComponent<AbstractArrow>();
         arrow.applyTemplet(ArrowTemplet);
         //Instantiate(Arrow, transform.position, transform.rotation);

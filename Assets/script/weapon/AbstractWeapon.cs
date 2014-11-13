@@ -85,6 +85,6 @@ public abstract class AbstractWeapon : MonoBehaviour {
     {
         coolDown = templet.CoolDown;
         needSp = templet.NeedSp;
-        print("coolDown=" + coolDown);
+        //print("coolDown=" + coolDown);
     }  
 }
