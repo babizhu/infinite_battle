@@ -3,9 +3,9 @@ using System.Collections;
 
 public class MonsterSpawn : MonoBehaviour
 {
-    public float xUnit = 0.3f;//x轴上的偏移,一波在某行出现多个怪，未避免重叠，x轴上做一定的偏移
-    public float rowHeight = 0.9f;//行高
-    public Vector2 origin = new Vector2(6f,-1.8f);//场景出怪的坐标原点，比如第四排就是坐标原点的y轴加上4个单位的rawHeight
+    public float xUnit = 0.6f;//x轴上的偏移,一波在某行出现多个怪，未避免重叠，x轴上做一定的偏移
+    public float rowHeight = 0.75f;//行高
+    public Vector2 origin = new Vector2(6f,-1.55f);//场景出怪的坐标原点，比如第四排就是坐标原点的y轴加上4个单位的rawHeight
 
     private MissionTemplet missionTemplet;
 

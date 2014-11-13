@@ -1,83 +1,85 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.20506</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9EEE1FF7-AC37-790C-CA54-707878350521}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>
-    </RootNamespace>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <BaseDirectory>Assets</BaseDirectory>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{9EEE1FF7-AC37-790C-CA54-707878350521}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>0169</NoWarn>
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>Temp\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>0169</NoWarn>
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+	<Reference Include="System" />
     <Reference Include="System.XML" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="UnityEngine">
-      <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
-    </Reference>
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\script\config\MissionTemplet.cs" />
-    <Compile Include="Assets\script\config\MissionTempletConfig.cs" />
-    <Compile Include="Assets\script\config\MonsterTemplet.cs" />
-    <Compile Include="Assets\script\config\MonsterTempletConfig.cs" />
-    <Compile Include="Assets\script\config\MonsterWithPosition.cs" />
-    <Compile Include="Assets\script\config\WaveTemplet.cs" />
-    <Compile Include="Assets\script\input\ClickScreen.cs" />
-    <Compile Include="Assets\script\input\IClickEvent.cs" />
-    <Compile Include="Assets\script\input\IClickEvent2.cs" />
-    <Compile Include="Assets\script\misc\ShowStatus.cs" />
-    <Compile Include="Assets\script\mission\MonsterSpawn.cs" />
-    <Compile Include="Assets\script\monster\AbstractMonster.cs" />
-    <Compile Include="Assets\script\monster\Monster1.cs" />
-    <Compile Include="Assets\script\player\Player.cs" />
-    <Compile Include="Assets\script\player\ScoreManager.cs" />
-    <Compile Include="Assets\script\sound\Sound.cs" />
-    <Compile Include="Assets\script\test\XmlTest.cs" />
-    <Compile Include="Assets\script\trap\FireTrap.cs" />
-    <Compile Include="Assets\script\trap\FireTrapClick.cs" />
-    <Compile Include="Assets\script\weapon\AbstractWeapon.cs" />
-    <Compile Include="Assets\script\weapon\Arrow1.cs" />
-    <Compile Include="Assets\script\weapon\Bow2.cs" />
-    <Compile Include="Assets\script\weapon\MagicBomb.cs" />
-    <Compile Include="Assets\script\weapon\SwitchWeapon.cs" />
-    <None Include="Assets\StreamingAssets\arrow.xml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Assets\StreamingAssets\mission.xml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Assets\StreamingAssets\monster.xml" />
+     <Compile Include="Assets\script\config\ArrowTemplet.cs" />
+     <Compile Include="Assets\script\config\ArrowTempletConfig.cs" />
+     <Compile Include="Assets\script\config\MissionTemplet.cs" />
+     <Compile Include="Assets\script\config\MissionTempletConfig.cs" />
+     <Compile Include="Assets\script\config\MonsterTemplet.cs" />
+     <Compile Include="Assets\script\config\MonsterTempletConfig.cs" />
+     <Compile Include="Assets\script\config\MonsterWithPosition.cs" />
+     <Compile Include="Assets\script\config\WaveTemplet.cs" />
+     <Compile Include="Assets\script\config\WeaponTemplet.cs" />
+     <Compile Include="Assets\script\config\WeaponTempletConfig.cs" />
+     <Compile Include="Assets\script\input\ClickScreen.cs" />
+     <Compile Include="Assets\script\input\IClickEvent.cs" />
+     <Compile Include="Assets\script\input\IClickEvent2.cs" />
+     <Compile Include="Assets\script\misc\ShowStatus.cs" />
+     <Compile Include="Assets\script\mission\MonsterSpawn.cs" />
+     <Compile Include="Assets\script\monster\AbstractMonster.cs" />
+     <Compile Include="Assets\script\monster\Monster1.cs" />
+     <Compile Include="Assets\script\player\Player.cs" />
+     <Compile Include="Assets\script\player\ScoreManager.cs" />
+     <Compile Include="Assets\script\scene\Scene.cs" />
+     <Compile Include="Assets\script\sound\Sound.cs" />
+     <Compile Include="Assets\script\test\XmlTest.cs" />
+     <Compile Include="Assets\script\trap\FireTrap.cs" />
+     <Compile Include="Assets\script\trap\FireTrapClick.cs" />
+     <Compile Include="Assets\script\weapon\AbstractArrow.cs" />
+     <Compile Include="Assets\script\weapon\AbstractWeapon.cs" />
+     <Compile Include="Assets\script\weapon\Arrow1.cs" />
+     <Compile Include="Assets\script\weapon\Bow2.cs" />
+     <Compile Include="Assets\script\weapon\MagicBomb.cs" />
+     <Compile Include="Assets\script\weapon\SwitchWeapon.cs" />
+     <None Include="Assets\StreamingAssets\arrow.xml" />
+     <None Include="Assets\StreamingAssets\weapon.xml" />
+     <None Include="Assets\StreamingAssets\mission.xml" />
+     <None Include="Assets\StreamingAssets\monster.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -87,4 +89,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>

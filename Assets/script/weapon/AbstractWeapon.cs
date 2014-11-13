@@ -6,6 +6,20 @@ using System.Collections;
  */
 public abstract class AbstractWeapon : MonoBehaviour {
 
+    private GameObject arrow;
+
+    public GameObject Arrow
+    {
+        set { arrow = value; }
+        get { return arrow; }
+    }
+    private ArrowTemplet arrowTemplet;
+    public ArrowTemplet ArrowTemplet
+    {
+        set { arrowTemplet = value; }
+        get { return arrowTemplet; }
+    }
+
     /**
      * 当前冷却时间
      */
@@ -17,7 +31,7 @@ public abstract class AbstractWeapon : MonoBehaviour {
     }
 
     /**
-     * 冷却时间，类似常量
+     * 冷却时间
      */
     private float coolDown;
     public float CoolDown
@@ -26,7 +40,14 @@ public abstract class AbstractWeapon : MonoBehaviour {
         set { coolDown = value; }
     }
 
-	    
+
+    private int needSp;
+    public int NeedSp
+    {
+        set { needSp = value; }
+        get { return needSp; }
+    }
+
     /**
      * 开火
      */
@@ -44,6 +65,7 @@ public abstract class AbstractWeapon : MonoBehaviour {
         float angle = Mathf.Rad2Deg * Mathf.Atan(a2bDirection.y / a2bDirection.x);
 
         transform.eulerAngles = new Vector3(0, 0, angle);
+       
         if (currentCoolDown > 0)
         {
             currentCoolDown -= Time.deltaTime;
@@ -59,5 +81,10 @@ public abstract class AbstractWeapon : MonoBehaviour {
 
     protected abstract void doNormalAttack();
 
-    
+    public virtual void applyTemplet(WeaponTemplet templet)
+    {
+        coolDown = templet.CoolDown;
+        needSp = templet.NeedSp;
+        print("coolDown=" + coolDown);
+    }  
 }

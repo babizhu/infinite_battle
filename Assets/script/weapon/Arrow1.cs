@@ -1,45 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Arrow1 : MonoBehaviour
+public class Arrow1 : AbstractArrow
 {
-    public AudioClip fire;
-    public float speed = 20;
-
-    private Vector3 target;
-    float angle;
-
-    public int attackDamage = 1;
-
-    //public static int miss = 0;
-
+   
     void Awake()
     {
-        
+        init();
     }
-    // Use this for initialization
-    void Start()
-    {
-        angle = (transform.eulerAngles.z) * Mathf.Deg2Rad;
-        float x = 100 * Mathf.Cos(angle);
-        float y = 100 * Mathf.Sin(angle);
-        target = new Vector3(x, y, 0);
-        Sound.getInstance().play( fire );
-    }
-
+    
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * speed);
-
-        if (transform.position.x > 20)
-        {
-            Destroy(gameObject);
-        }
-
-        //localPos.y = transformY - (height * sprite.ClipRect.y);
-        //sprite.transform.localPosition = localPos;
+        fly();
     }
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -49,17 +23,21 @@ public class Arrow1 : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
-        //print(coll.name);
+        doAttack(coll);       
+
+    }
+    protected override void doAttack(Collider2D coll)
+    {
         if (coll.tag == "monster")
         {
 
             Destroy(gameObject);
             //other.gameObject.GetComponent<IMonster>;
-            
-            AbstractMonster monster = coll.GetComponent<AbstractMonster>();
 
-            monster.Hp -= attackDamage;
-            
+            AbstractMonster monster = coll.GetComponent<AbstractMonster>();      
+
+            monster.Hp -= Attack;
+
             if (monster.isDie())
             {
                 monster.die();
@@ -81,7 +59,6 @@ public class Arrow1 : MonoBehaviour
             }
             //print("enemy hp is " + monster.Hp);
         }
-        
-
     }
+
 }

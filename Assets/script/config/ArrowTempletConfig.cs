@@ -55,8 +55,9 @@ public class ArrowTempletConfig {
 
 
         //遍历每一个节点，拿节点的属性以及节点的内容
-        foreach (XmlElement xe in nodeList)
+        foreach (XmlNode xe in nodeList)
         {
+
             ArrowTemplet t = new ArrowTemplet();
             Vector3 position = new Vector3();
             //Debug.Log(xe.Name);
@@ -67,12 +68,13 @@ public class ArrowTempletConfig {
                 else if (x1.Name == "id") t.Id = int.Parse(x1.InnerText);
                 
                 else if (x1.Name == "attack") t.Attack = int.Parse(x1.InnerText);
+                else if (x1.Name == "speed") t.Speed = int.Parse(x1.InnerText);
                 else if (x1.Name == "prefab") t.Prefab = x1.InnerText.Trim();
-                else if (x1.Name == "posX") position.x = int.Parse(x1.InnerText);
-                else if (x1.Name == "posY") position.y = int.Parse(x1.InnerText);
+                else if (x1.Name == "offsetPositionX") position.x = float.Parse(x1.InnerText);
+                else if (x1.Name == "offsetPositionY") position.y = float.Parse(x1.InnerText);               
                 
             }
-            t.Position = position;
+            t.OffsetPosition = position;
             //Debug.Log(t.ToString());
             data.Add(t.Id, t);
             

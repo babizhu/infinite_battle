@@ -36,22 +36,7 @@ public abstract class AbstractMonster : MonoBehaviour
         }
     }
 
-
-    // Use this for initialization
-    void Start()
-    {
-
        
-    }
-   
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-   
     abstract public void die();
 
     /**
@@ -61,7 +46,7 @@ public abstract class AbstractMonster : MonoBehaviour
     /**
      * 应用模板数据
      */
-    public void applyTemplet(MonsterTemplet templet)
+    public virtual void applyTemplet(MonsterTemplet templet)
     {
         Speed = templet.Speed;
         Hp = templet.Hp;
@@ -71,5 +56,7 @@ public abstract class AbstractMonster : MonoBehaviour
     {
         return hp <= 0;
     }
+
+    //public void beAttack()
 }
 	

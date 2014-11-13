@@ -54,6 +54,8 @@
      <Compile Include="Assets\script\config\MonsterTempletConfig.cs" />
      <Compile Include="Assets\script\config\MonsterWithPosition.cs" />
      <Compile Include="Assets\script\config\WaveTemplet.cs" />
+     <Compile Include="Assets\script\config\WeaponTemplet.cs" />
+     <Compile Include="Assets\script\config\WeaponTempletConfig.cs" />
      <Compile Include="Assets\script\input\ClickScreen.cs" />
      <Compile Include="Assets\script\input\IClickEvent.cs" />
      <Compile Include="Assets\script\input\IClickEvent2.cs" />
@@ -63,16 +65,19 @@
      <Compile Include="Assets\script\monster\Monster1.cs" />
      <Compile Include="Assets\script\player\Player.cs" />
      <Compile Include="Assets\script\player\ScoreManager.cs" />
+     <Compile Include="Assets\script\scene\Scene.cs" />
      <Compile Include="Assets\script\sound\Sound.cs" />
      <Compile Include="Assets\script\test\XmlTest.cs" />
      <Compile Include="Assets\script\trap\FireTrap.cs" />
      <Compile Include="Assets\script\trap\FireTrapClick.cs" />
+     <Compile Include="Assets\script\weapon\AbstractArrow.cs" />
      <Compile Include="Assets\script\weapon\AbstractWeapon.cs" />
      <Compile Include="Assets\script\weapon\Arrow1.cs" />
      <Compile Include="Assets\script\weapon\Bow2.cs" />
      <Compile Include="Assets\script\weapon\MagicBomb.cs" />
      <Compile Include="Assets\script\weapon\SwitchWeapon.cs" />
      <None Include="Assets\StreamingAssets\arrow.xml" />
+     <None Include="Assets\StreamingAssets\weapon.xml" />
      <None Include="Assets\StreamingAssets\mission.xml" />
      <None Include="Assets\StreamingAssets\monster.xml" />
   </ItemGroup>

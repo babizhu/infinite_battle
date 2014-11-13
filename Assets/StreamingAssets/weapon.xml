@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<weapons>
+  <weapon>
+		<id>1</id>
+		<name>黄金弓箭</name>
+		<prefab>bow2</prefab>
+    <weaponPosX>0.75</weaponPosX>
+    <weaponPosY>0</weaponPosY>
+    <coolDown>0.2</coolDown>
+    <needSp>0</needSp>
+	</weapon>
+
+  <weapon>
+    <id>2</id>
+    <name>激光炮台</name>
+    <prefab>magicWeapon1</prefab>
+    <weaponPosX>-1.2</weaponPosX>
+    <weaponPosY>0</weaponPosY>
+    <coolDown>0.3</coolDown>
+    <needSp>30</needSp>
+  </weapon>
+  
+  <!--<weapon>
+		<id>2</id>
+		<name>激光炮</name>
+		<prefab>magicBomb</prefab>
+    <attack>100</attack>
+    <speed>10</speed>
+    <posX>0</posX>
+    <posY>0</posY>
+	</weapon>-->
+</weapons>

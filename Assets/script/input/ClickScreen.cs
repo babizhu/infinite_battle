@@ -74,7 +74,7 @@ public class ClickScreen : MonoBehaviour {
             }
             else
             {
-                print("什么也没有碰到");
+                //print("什么也没有碰到");
                 unChoose();
             }
 

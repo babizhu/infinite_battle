@@ -3,20 +3,9 @@ using System.Collections;
 
 public class Bow2 : AbstractWeapon
 {
-    public GameObject arrow;
-
-    void Awake()
-    {        
-        CurrentCoolDown = 0;
-        CoolDown = 0.2f;
-    }
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
+    //private Player player = Player.getInstance();
     // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetButton("Fire1"))
@@ -26,11 +15,12 @@ public class Bow2 : AbstractWeapon
 
     }
 
-
-
-
     protected override void doNormalAttack()
     {
-        Instantiate(arrow, transform.position, transform.rotation);
+        
+        GameObject arrowObj = Instantiate(Arrow, transform.position, transform.rotation) as GameObject;
+        AbstractArrow arrow = arrowObj.GetComponent<AbstractArrow>();
+        arrow.applyTemplet(ArrowTemplet);
+        //Instantiate(Arrow, transform.position, transform.rotation);
     }
 }
