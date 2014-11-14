@@ -3,10 +3,11 @@ using System.Collections;
 
 public class Monster1 : AbstractMonster {
 
- 
 
+    private Player player;
 	// Use this for initialization
 	void Start () {
+        player = GameObject.Find("player").GetComponent<Player>();
  
  //       SetPostion();
 	}
@@ -43,8 +44,8 @@ public class Monster1 : AbstractMonster {
 
     public override void die()
     {
-        Sound.getInstance().play(hit);      
-        Player.getInstance().addScore(3);
+        Sound.getInstance().play(hit);
+        player.addScore(3);
         Destroy(gameObject);
         
     }
@@ -55,7 +56,7 @@ public class Monster1 : AbstractMonster {
 
         Sound.getInstance().play(hit);
 
-        Player.getInstance().defend(this);
+        player.defend(this);
         //Player.getInstance().addScore(3);
         Destroy(gameObject);
 

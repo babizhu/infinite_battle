@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player {
+public class Player:MonoBehaviour
+{
 
     private ScoreManager scoreManager;
     private Wall wall;
@@ -40,17 +41,14 @@ public class Player {
      * 玩家得分
      */
     private int score;
-    
-
-    private static Player m_instance = null;
 
     private WeaponTemplet phyWeaponTemplet, magicWeaponTemplet;
     private ArrowTemplet phyArrowTemplet, magicArrowTemplet;
 
-    private Player()
-    {
+    void Awake()
+    {        
         currentMission = 1;
-        scoreManager = GameObject.Find("score").GetComponent<ScoreManager>();
+       
         phyArrowId = 1;
         phyWeaponId = 1;
 
@@ -61,15 +59,14 @@ public class Player {
         magicWeaponTemplet = WeaponTempletConfig.getInstance().get(MagicWeaponId);
         phyArrowTemplet = ArrowTempletConfig.getInstance().get(PhyArrowId);
         magicArrowTemplet = ArrowTempletConfig.getInstance().get(MagicArrowId);
+
+        print("Player.Awake()");
     }
 
-    public static Player getInstance()
+    void Start()
     {
-        if (m_instance == null)
-        {
-            m_instance = new Player();
-        }
-        return m_instance;
+        scoreManager = GameObject.Find("score").GetComponent<ScoreManager>();
+        wall = GameObject.Find("wall").GetComponent<Wall>();
     }
 
     public void addScore( int addScore ){
@@ -82,7 +79,8 @@ public class Player {
      */
     public void defend(AbstractMonster monster)
     {
-        Debug.Log("城墙防御受到了" + monster.name + "的攻击");
+        //Debug.Log("城墙防御受到了" + monster.name + "的攻击");
+        wall.defend( monster);
     }
 
 

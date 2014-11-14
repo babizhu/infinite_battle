@@ -8,6 +8,7 @@ public class MonsterTemplet {
     private string name;
     private float speed;
     private string prefab;
+    private int attackDamage;
 
 
     public int Id
@@ -36,5 +37,11 @@ public class MonsterTemplet {
     {
         set { prefab = value; }
         get { return prefab; }
+    }
+
+    public int AttackDamage
+    {
+        set { attackDamage = value; }
+        get { return attackDamage; }
     }
 }

@@ -66,6 +66,7 @@ string filePath = "file://" + UnityEngine.Application.streamingAssetsPath + file
                 if (x1.Name == "name") t.Name = x1.InnerText.Trim();
                 else if (x1.Name == "hp") t.Hp = int.Parse(x1.InnerText);
                 else if (x1.Name == "id") t.Id = int.Parse(x1.InnerText);
+                else if (x1.Name == "attackDamage") t.AttackDamage = int.Parse(x1.InnerText);
                 else if (x1.Name == "speed") t.Speed = float.Parse(x1.InnerText);
                 else if (x1.Name == "prefab") t.Prefab = x1.InnerText.Trim(); ;
             }

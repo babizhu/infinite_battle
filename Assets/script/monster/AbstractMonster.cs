@@ -9,6 +9,7 @@ public abstract class AbstractMonster : MonoBehaviour
      */
     public AudioClip hit;
     private float speed;
+    private int attackDamage;
     public float Speed
     {
         get
@@ -50,6 +51,7 @@ public abstract class AbstractMonster : MonoBehaviour
     {
         Speed = templet.Speed;
         Hp = templet.Hp;
+        AttackDamage = templet.AttackDamage;
     }
 
     public bool isDie()
@@ -57,6 +59,10 @@ public abstract class AbstractMonster : MonoBehaviour
         return hp <= 0;
     }
 
-    //public void beAttack()
+    public int AttackDamage
+    {
+        set { attackDamage = value; }
+        get { return attackDamage; }
+    }
 }
 	

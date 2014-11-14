@@ -9,9 +9,12 @@ public class MonsterSpawn : MonoBehaviour
 
     private MissionTemplet missionTemplet;
 
+    private Player player;
+
 	// Use this for initialization
 	void Start () {
-        print("等待出怪");
+        //print("等待出怪");
+        player = GameObject.Find("player").GetComponent<Player>();
         StartCoroutine( spawn() );
         
 	}
@@ -19,8 +22,9 @@ public class MonsterSpawn : MonoBehaviour
 
     IEnumerator spawn()
     {
+        
         //获取玩家当前的关卡模板
-        missionTemplet = MissionTempletConfig.getInstance().get(Player.getInstance().CurrentMission);
+        missionTemplet = MissionTempletConfig.getInstance().get(player.CurrentMission);
         foreach (WaveTemplet wt in missionTemplet.Waves)
         {
             yield return new WaitForSeconds(wt.DelaySecond);
@@ -34,7 +38,7 @@ public class MonsterSpawn : MonoBehaviour
         foreach (MonsterWithPosition mp in wt.MonsterList)
         {
             MonsterTemplet t = mp.MonsterTemplet;
-            print(t.Name + "(" + t.Id + ") : row=" + mp.Row + " y=" + origin.y + mp.Row * rowHeight + " hp=" + t.Hp);
+            //print(t.Name + "(" + t.Id + ") : row=" + mp.Row + " y=" + origin.y + mp.Row * rowHeight + " hp=" + t.Hp);
             
             Vector3 pos = new Vector3(origin.x + xOffset[mp.Row] * xUnit,origin.y + mp.Row * rowHeight,0);
             xOffset[mp.Row] += 1;

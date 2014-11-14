@@ -25,10 +25,10 @@ public class ScrollBar : MonoBehaviour
     public float MaxScaleX;
 
     //head物体需要移动的最大宽度,同上，注意是宽度不是位置坐标！！！
-    public float MaxWidth;
+    public float MaxBarWidth = 2.26f;
 
     //动画播放的帧数,可以用此参数控制动画速度
-    public float MaxFrame = 100;
+    public int MaxFrame = 100;
 
     private Transform bodyTransform, headTransform;
     private Vector3 bodyCurrentScale;
@@ -46,19 +46,19 @@ public class ScrollBar : MonoBehaviour
         bodyCurrentScale = bodyTransform.localScale;
 
         headTransform = Head.transform;
-        int direction = 1;
-        if (MaxWidth == 0)
+        //int direction = 1;
+        if (MaxBarWidth == 0)
         {
-            direction = -1;
-            MaxWidth = headTransform.localPosition.x - bodyTransform.localPosition.x;
+          //  direction = -1;
+            MaxBarWidth = headTransform.localPosition.x - bodyTransform.localPosition.x;
         }
         headCurrentPosition = headTransform.localPosition;
 
-        scroll(40*direction);
-        scroll(20 * direction);
-        scroll(10 * direction);
-        scroll(30 * direction);
-        scroll(20 * direction);
+        //scroll(40*direction);
+        //scroll(20 * direction);
+        //scroll(10 * direction);
+        //scroll(30 * direction);
+        //scroll(20 * direction);
 
     }
 
@@ -78,23 +78,21 @@ public class ScrollBar : MonoBehaviour
         currentValue += changeValue;
         currentValue = Mathf.Max(currentValue, 0);
         currentValue = Mathf.Min(currentValue, MaxValue);
-        int frameCount = (int)(Mathf.Abs(changeValue) / (float)MaxValue * (float)100);
+        int frameCount = (int)(Mathf.Abs(changeValue) / (float)MaxValue * MaxFrame);
        
         float rate = (float)currentValue / MaxValue;
         float to = MaxScaleX * rate;
-
         float from = bodyTransform.localScale.x;
         float step = (to - from) / frameCount;
 
 
-        to = bodyTransform.localPosition.x + MaxWidth * rate;
+        to = bodyTransform.localPosition.x + MaxBarWidth * rate;
         from = headTransform.localPosition.x;
         float stepPositon = (from - to) / frameCount;
         //print("to=" + to + " from=" + from + " stepPositon=" + stepPositon + "rate=" + rate);
+
         for (int i = 0; i < frameCount; i++)
         {
-
-            //print(Time.time * speed);
             headCurrentPosition.x -= stepPositon;
             headTransform.localPosition = headCurrentPosition;
             bodyCurrentScale.x += step;

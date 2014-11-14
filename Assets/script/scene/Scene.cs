@@ -7,12 +7,9 @@ public class Scene : MonoBehaviour {
 
     private GameObject phyWeapon, magicWeapon;
 	// Use this for initialization
-	void Awake () {
-        Player player = Player.getInstance();
-        
-
-        //GameObject phyArrow = buildArrow(player.PhyArrowTemplet);
-        //GameObject magicArrow = buildArrow(player.MagicArrowTemplet);
+    private Player player;
+	void Start () {
+        player = GameObject.Find("player").GetComponent<Player>();      
 
         phyWeapon = buildWeapon(player.PhyWeaponTemplet, player.PhyArrowTemplet);
         magicWeapon = buildWeapon(player.MagicWeaponTemplet, player.MagicArrowTemplet);      
@@ -20,6 +17,10 @@ public class Scene : MonoBehaviour {
         //初始，魔法武器隐藏在后面，不显示
         magicWeapon.transform.localEulerAngles = new Vector3(0, 0, 180);
         magicWeapon.SetActive(false);
+
+        SwitchWeapon sw = switchWeapon.GetComponent<SwitchWeapon>();
+        sw.PhyWeapon = phyWeapon;
+        sw.MagicWeapon = magicWeapon;
 	}
 
     private GameObject buildWeapon(WeaponTemplet templet,ArrowTemplet arrowTemplet)
@@ -44,15 +45,5 @@ public class Scene : MonoBehaviour {
         return arrowObj;
     }
 
-    void Start() {
-        SwitchWeapon sw = switchWeapon.GetComponent<SwitchWeapon>();
-        sw.PhyWeapon = phyWeapon;
-        sw.MagicWeapon = magicWeapon;
-        
-    }
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
