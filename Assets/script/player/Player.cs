@@ -4,6 +4,7 @@ using System.Collections;
 public class Player {
 
     private ScoreManager scoreManager;
+    private Wall wall;
     
     /**
      * 当前关卡
