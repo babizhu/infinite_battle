@@ -10,7 +10,7 @@ public class Bow2 : AbstractWeapon
     private Vector3 arrowPosition;
 
     void Start(){
-        
+        player = GameObject.Find("player").GetComponent<Player>();
     }
     void Update()
     {

@@ -4,8 +4,8 @@
 		<id>1</id>
 		<name>黄金箭</name>
 		<prefab>arrow1</prefab>
-		<attack>30</attack>
-		<speed>12</speed>
+		<attack>25</attack>
+		<speed>10</speed>
     <offsetPositionX>0</offsetPositionX>
     <offsetPositionY>0</offsetPositionY>   
 	</arrow>
@@ -15,7 +15,7 @@
     <name>激光炮</name>
     <prefab>magicArrow1</prefab>
     <attack>100</attack>
-    <speed>9</speed>
+    <speed>5</speed>
     <offsetPositionX>0.6</offsetPositionX>
     <offsetPositionY>0</offsetPositionY>
   </arrow>

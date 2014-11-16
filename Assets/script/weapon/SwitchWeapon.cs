@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SwitchWeapon : IClickEvent
 {
-    public float speed = 10;
+    public float speed = 5;
     public Transform weaponGroup;
     public GameObject PhyWeapon;
     public GameObject MagicWeapon;

@@ -6,6 +6,8 @@ public class Player:MonoBehaviour
 
     private ScoreManager scoreManager;
     private Wall wall;
+    private int currentSp;
+    private ScrollBar spBar;
     
     /**
      * 当前关卡
@@ -67,6 +69,17 @@ public class Player:MonoBehaviour
     {
         scoreManager = GameObject.Find("score").GetComponent<ScoreManager>();
         wall = GameObject.Find("wall").GetComponent<Wall>();
+        spBar = GameObject.Find("sp").GetComponent<ScrollBar>();
+        InvokeRepeating("changeCurrentSp", 1, 0.1f);
+    }
+
+    private void changeCurrentSp( ){
+        changeCurrentSp(3);
+    }
+    public void changeCurrentSp( int changeValue )
+    {
+        currentSp += changeValue;
+        spBar.scroll(changeValue);
     }
 
     public void addScore( int addScore ){
@@ -84,6 +97,11 @@ public class Player:MonoBehaviour
     }
 
 
+    public int CurrentSp
+    {
+        set { currentSp = value; }
+        get { return currentSp; }
+    }
 
     public ArrowTemplet MagicArrowTemplet
     {

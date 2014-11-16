@@ -7,6 +7,7 @@ using System.Collections;
 public abstract class AbstractWeapon : MonoBehaviour {
 
     private GameObject arrow;
+    protected Player player;
 
     public GameObject Arrow
     {
@@ -72,11 +73,16 @@ public abstract class AbstractWeapon : MonoBehaviour {
             return;
         }
 
-        if (currentCoolDown <= 0)
+        if (player.CurrentSp < needSp)
         {
-            doNormalAttack();
-            currentCoolDown = coolDown;
+            return;
         }
+
+
+        doNormalAttack();
+        currentCoolDown = coolDown;
+        player.changeCurrentSp(-needSp);
+        
     }
 
     protected abstract void doNormalAttack();
