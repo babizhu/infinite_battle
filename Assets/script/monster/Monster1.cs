@@ -17,7 +17,7 @@ public class Monster1 : AbstractMonster {
         float moveAmt = Speed * Time.deltaTime;
         transform.position -= Vector3.right * moveAmt;
 
-        if (transform.position.x < -4.3f)
+        if (transform.position.x < -3.7f)
         {
             attack();
             //Bow.Live--;;
@@ -44,9 +44,10 @@ public class Monster1 : AbstractMonster {
 
     public override void die()
     {
+        Destroy(gameObject);
         Sound.getInstance().play(hit);
         player.addScore(3);
-        Destroy(gameObject);
+        
         
     }
 

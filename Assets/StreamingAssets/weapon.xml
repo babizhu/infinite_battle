@@ -16,8 +16,8 @@
     <prefab>magicWeapon1</prefab>
     <weaponPosX>-1.2</weaponPosX>
     <weaponPosY>0</weaponPosY>
-    <coolDown>0.3</coolDown>
-    <needSp>30</needSp>
+    <coolDown>.8</coolDown>
+    <needSp>40</needSp>
   </weapon>
   
   <!--<weapon>

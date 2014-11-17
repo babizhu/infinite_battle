@@ -60,7 +60,7 @@ public class ArrowTempletConfig {
         {
 
             ArrowTemplet t = new ArrowTemplet();
-            Vector3 position = new Vector3();
+            
             //Debug.Log(xe.Name);
             foreach (XmlNode x1 in xe.ChildNodes)
             {
@@ -71,11 +71,11 @@ public class ArrowTempletConfig {
                 else if (x1.Name == "attack") t.Attack = int.Parse(x1.InnerText);
                 else if (x1.Name == "speed") t.Speed = int.Parse(x1.InnerText);
                 else if (x1.Name == "prefab") t.Prefab = x1.InnerText.Trim();
-                else if (x1.Name == "offsetPositionX") position.x = float.Parse(x1.InnerText);
-                else if (x1.Name == "offsetPositionY") position.y = float.Parse(x1.InnerText);               
+                //else if (x1.Name == "offsetPositionX") position.x = float.Parse(x1.InnerText);
+                //else if (x1.Name == "offsetPositionY") position.y = float.Parse(x1.InnerText);               
                 
             }
-            t.OffsetPosition = position;
+            //t.OffsetPosition = position;
             //Debug.Log(t.ToString());
             data.Add(t.Id, t);
             

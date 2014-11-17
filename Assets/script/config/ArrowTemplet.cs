@@ -8,7 +8,7 @@ public class ArrowTemplet
     private string name;
     private float speed;
     private string prefab;
-    private Vector3 offsetPosition = new Vector3();    
+    //private Vector3 offsetPosition = new Vector3();    
     
 
     public int Id
@@ -40,9 +40,9 @@ public class ArrowTemplet
         get { return prefab; }
     }
    
-    public Vector3 OffsetPosition{
-        set { offsetPosition = value; }
-        get { return offsetPosition; }
-    }
+    //public Vector3 OffsetPosition{
+    //    set { offsetPosition = value; }
+    //    get { return offsetPosition; }
+    //}
     
 }

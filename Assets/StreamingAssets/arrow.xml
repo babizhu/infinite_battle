@@ -6,18 +6,16 @@
 		<prefab>arrow1</prefab>
 		<attack>25</attack>
 		<speed>10</speed>
-    <offsetPositionX>0</offsetPositionX>
-    <offsetPositionY>0</offsetPositionY>   
+    
 	</arrow>
 
   <arrow>
     <id>2</id>
-    <name>激光炮</name>
-    <prefab>magicArrow1</prefab>
-    <attack>100</attack>
+    <name>榴弹炮</name>
+    <prefab>bomb1</prefab>
+    <attack>80</attack>
     <speed>5</speed>
-    <offsetPositionX>0.6</offsetPositionX>
-    <offsetPositionY>0</offsetPositionY>
+    
   </arrow>
   
   <!--<weapon>

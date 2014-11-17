@@ -14,7 +14,7 @@ public class Bow2 : AbstractWeapon
     }
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") )
         {
             fire();
         }
@@ -32,6 +32,7 @@ public class Bow2 : AbstractWeapon
         }
         GameObject arrowObj = Instantiate(Arrow, arrowPosition, transform.rotation) as GameObject;
         AbstractArrow arrow = arrowObj.GetComponent<AbstractArrow>();
+        
         arrow.applyTemplet(ArrowTemplet);
         //Instantiate(Arrow, transform.position, transform.rotation);
     }

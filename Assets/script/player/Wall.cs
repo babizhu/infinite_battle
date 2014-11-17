@@ -24,7 +24,10 @@ public class Wall : MonoBehaviour {
     public void defend( AbstractMonster monster )
     {
         int damage = monster.AttackDamage;
+        print(hp);
         hp -= damage;
+        print("monster.AttackDamage=" + monster.AttackDamage);
+        print(hp);
         bar.scroll(-damage);
         if (hp <= 0)
         {

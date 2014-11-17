@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MagicBomb : AbstractArrow
 {
-
+    public GameObject BombExplosion;
     void Awake()
     {
         init();
@@ -28,36 +28,31 @@ public class MagicBomb : AbstractArrow
     }
     protected override void doAttack(Collider2D coll)
     {
-        if (coll.tag == "monster")
+        if (coll.CompareTag("monster"))
         {
 
             Destroy(gameObject);
-            //other.gameObject.GetComponent<IMonster>;
-
-            AbstractMonster monster = coll.GetComponent<AbstractMonster>();
-
-            monster.Hp -= Attack;
-
-            if (monster.isDie())
+            GameObject explosion = Instantiate(BombExplosion, transform.localPosition, Quaternion.identity) as GameObject;
+            Destroy(explosion, 0.6f);
+            Collider2D[] collidedObj = Physics2D.OverlapCircleAll(transform.position, 1);
+            //print(collidedObj.Length);
+            foreach (Collider2D collider in collidedObj)
             {
-                monster.die();
-                //Bow.Score += 10;
-                //Bow.Sp += 1;
-                //if (Bow.Score == 300)
-                //{
-                //    Instantiate(Resources.Load("Monster5"), new Vector3(), Quaternion.identity);
-                //    Bow.FindBoss = true;
-                //}
-                //enemy.die(true);
-                //if (Bow.Score % 50 == 0)
-                //{
-                //    GameObject g = Instantiate(Resources.Load("Monster1"), new Vector3(), Quaternion.identity) as GameObject;
-                //    Debug.Log("g.GetType() is " + g.GetType());
-                //    Monster1 m = g.GetComponent<Monster1>();
-                //    //m.hp = 100;
-                //}
+                if (collider.CompareTag("monster"))
+                {
+                    AbstractMonster monster = collider.GetComponent<AbstractMonster>();
+
+                    //print(monster.Hp);
+                    monster.Hp -= Attack;
+                    //print(monster.Hp);
+                    if (monster.isDie())
+                    {
+                        monster.die();
+
+                    }
+                }
             }
-            //print("enemy hp is " + monster.Hp);
+          
         }
     }
 

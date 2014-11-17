@@ -62,7 +62,7 @@ public class Player:MonoBehaviour
         phyArrowTemplet = ArrowTempletConfig.getInstance().get(PhyArrowId);
         magicArrowTemplet = ArrowTempletConfig.getInstance().get(MagicArrowId);
 
-        print("Player.Awake()");
+        //print(magicArrowTemplet.Attack);
     }
 
     void Start()

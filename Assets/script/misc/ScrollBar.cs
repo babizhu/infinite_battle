@@ -17,7 +17,7 @@ public class ScrollBar : MonoBehaviour
     /**
      * 用来和外界通信的当前值，比如魔法条最大值为100，但是当前值通常为0
      */
-    public int currentValue;
+    public int CurrentValue;
     /**
      * 需要最大放大倍数，作为缩小的依据，此值和currentValue一样，没有办法通过程序获取，
      * 比如魔法条，初始化的时候，最大值为100，当前值为0，此时魔法条的最大方法倍数就无法直接获取
@@ -75,12 +75,12 @@ public class ScrollBar : MonoBehaviour
         }
         enter = false;
         //yield return new WaitForSeconds(2);
-        currentValue += changeValue;
-        currentValue = Mathf.Max(currentValue, 0);
-        currentValue = Mathf.Min(currentValue, MaxValue);
+        CurrentValue += changeValue;
+        CurrentValue = Mathf.Max(CurrentValue, 0);
+        CurrentValue = Mathf.Min(CurrentValue, MaxValue);
         int frameCount = (int)(Mathf.Abs(changeValue) / (float)MaxValue * MaxFrame);
        
-        float rate = (float)currentValue / MaxValue;
+        float rate = (float)CurrentValue / MaxValue;
         float to = MaxScaleX * rate;
         float from = bodyTransform.localScale.x;
         float step = (to - from) / frameCount;
