@@ -63,6 +63,12 @@ public abstract class AbstractWeapon : MonoBehaviour {
             return;
         }
 
+        
+        Vector3 a2bDirection = target - transform.position;//获得一条从弓箭向量尾指向鼠标的向量。
+
+        eulerAngles.z = Mathf.Rad2Deg * Mathf.Atan(a2bDirection.y / a2bDirection.x);
+
+        transform.eulerAngles = eulerAngles;
         if (currentCoolDown > 0)
         {
             currentCoolDown -= Time.deltaTime;
@@ -73,12 +79,6 @@ public abstract class AbstractWeapon : MonoBehaviour {
         {
             return;
         }
-
-        Vector3 a2bDirection = target - transform.position;//获得一条从弓箭向量尾指向鼠标的向量。
-
-        eulerAngles.z = Mathf.Rad2Deg * Mathf.Atan(a2bDirection.y / a2bDirection.x);
-
-        transform.eulerAngles = eulerAngles;
 
         doNormalAttack();
         currentCoolDown = coolDown;
