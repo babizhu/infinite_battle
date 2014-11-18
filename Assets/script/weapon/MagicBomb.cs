@@ -41,15 +41,7 @@ public class MagicBomb : AbstractArrow
                 if (collider.CompareTag("monster"))
                 {
                     AbstractMonster monster = collider.GetComponent<AbstractMonster>();
-
-                    //print(monster.Hp);
-                    monster.Hp -= Attack;
-                    //print(monster.Hp);
-                    if (monster.isDie())
-                    {
-                        monster.die();
-
-                    }
+                    monster.defend(this);
                 }
             }
           

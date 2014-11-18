@@ -64,5 +64,11 @@ public abstract class AbstractMonster : MonoBehaviour
         set { attackDamage = value; }
         get { return attackDamage; }
     }
+
+
+    /**
+     * 被攻击的时候调用的函数
+     */
+    public abstract void defend(AbstractArrow arrow1);
 }
 	

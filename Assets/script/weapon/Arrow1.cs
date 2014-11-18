@@ -34,30 +34,9 @@ public class Arrow1 : AbstractArrow
             Destroy(gameObject);
             //other.gameObject.GetComponent<IMonster>;
 
-            AbstractMonster monster = coll.GetComponent<AbstractMonster>();      
-
-            monster.Hp -= Attack;
-
-            if (monster.isDie())
-            {
-                monster.die();
-                //Bow.Score += 10;
-                //Bow.Sp += 1;
-                //if (Bow.Score == 300)
-                //{
-                //    Instantiate(Resources.Load("Monster5"), new Vector3(), Quaternion.identity);
-                //    Bow.FindBoss = true;
-                //}
-                //enemy.die(true);
-                //if (Bow.Score % 50 == 0)
-                //{
-                //    GameObject g = Instantiate(Resources.Load("Monster1"), new Vector3(), Quaternion.identity) as GameObject;
-                //    Debug.Log("g.GetType() is " + g.GetType());
-                //    Monster1 m = g.GetComponent<Monster1>();
-                //    //m.hp = 100;
-                //}
-            }
-            //print("enemy hp is " + monster.Hp);
+            AbstractMonster monster = coll.GetComponent<AbstractMonster>();
+            monster.defend(this);
+            
         }
     }
 

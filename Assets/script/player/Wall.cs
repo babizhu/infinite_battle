@@ -24,15 +24,14 @@ public class Wall : MonoBehaviour {
     public void defend( AbstractMonster monster )
     {
         int damage = monster.AttackDamage;
-        print(hp);
+        //print(hp);
         hp -= damage;
-        print("monster.AttackDamage=" + monster.AttackDamage);
-        print(hp);
+        
         bar.scroll(-damage);
         if (hp <= 0)
         {
-            print("你死了");
             Application.LoadLevel("dead");
+            print("你死了");
         }
     }
 }

@@ -8,34 +8,40 @@ public class ClickScreen : MonoBehaviour {
     private GameObject prevChoose;
     // Use this for initialization
 
+    //仅当UI没有处理点击事件的时候才能发射武器
+    public static bool catchClickEvent = true;
+
+    //private static ClickScreen m_instance = null;
+
+    //private ClickScreen()
+    //{
+    //}
+
+    //public static ClickScreen getInstance()
+    //{
+    //    if (m_instance == null)
+    //    {
+    //        m_instance = new ClickScreen();
+    //    }
+    //    return m_instance;
+    //}
 
 
-    private static ClickScreen m_instance = null;
-
-    private ClickScreen()
-    {
-    }
-
-    public static ClickScreen getInstance()
-    {
-        if (m_instance == null)
-        {
-            m_instance = new ClickScreen();
-        }
-        return m_instance;
-    }
+    //void Start()
+    //{
 
 
-    void Start()
-    {
-
-
-    }
+    //}
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) ) 
+        //if (Input.GetButtonUp("Fire1"))
+        //{
+        //    catchClickEvent = false;
+        //    return;
+        //}
+        if (Input.GetButtonDown("Fire1")) 
         {
             //你问我为什么会有vector3？因为ScreenToWorldPoint没有返回v2的重载！！！
             //当然，不同于3D，2D不会用ray，所以这里直接ScreenToWorldPoint（屏幕坐标转世界坐标），发出地为鼠标位置
@@ -71,10 +77,12 @@ public class ClickScreen : MonoBehaviour {
 
                 }
 
+                catchClickEvent = true;
             }
             else
             {
                 //print("什么也没有碰到");
+                catchClickEvent = false;
                 unChoose();
             }
 
