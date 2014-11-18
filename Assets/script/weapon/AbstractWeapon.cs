@@ -9,6 +9,8 @@ public abstract class AbstractWeapon : MonoBehaviour {
     private GameObject arrow;
     protected Player player;
 
+
+    private Vector3 eulerAngles = new Vector3();
     public GameObject Arrow
     {
         set { arrow = value; }
@@ -56,13 +58,11 @@ public abstract class AbstractWeapon : MonoBehaviour {
     {
 
         Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-       
-        Vector3 a2bDirection = target - transform.position;//获得一条从弓箭向量尾指向鼠标的向量。
+        if (target.x < -4f || target.y > 2.76f)
+        {
+            return;
+        }
 
-        float angle = Mathf.Rad2Deg * Mathf.Atan(a2bDirection.y / a2bDirection.x);
-
-        transform.eulerAngles = new Vector3(0, 0, angle);
-       
         if (currentCoolDown > 0)
         {
             currentCoolDown -= Time.deltaTime;
@@ -74,6 +74,11 @@ public abstract class AbstractWeapon : MonoBehaviour {
             return;
         }
 
+        Vector3 a2bDirection = target - transform.position;//获得一条从弓箭向量尾指向鼠标的向量。
+
+        eulerAngles.z = Mathf.Rad2Deg * Mathf.Atan(a2bDirection.y / a2bDirection.x);
+
+        transform.eulerAngles = eulerAngles;
 
         doNormalAttack();
         currentCoolDown = coolDown;

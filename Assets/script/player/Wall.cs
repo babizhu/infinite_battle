@@ -31,7 +31,7 @@ public class Wall : MonoBehaviour {
         if (hp <= 0)
         {
             Application.LoadLevel("dead");
-            print("你死了");
+            //print("你死了");
         }
     }
 }

@@ -7,15 +7,16 @@ public class Bow2 : AbstractWeapon
     // Update is called once per frame
 
     public Transform arrowPositionObject;
-    private Vector3 arrowPosition;
+    protected Vector3 arrowPosition;
 
     void Start(){
         player = GameObject.Find("player").GetComponent<Player>();
     }
     void FixedUpdate()
     {
-        if (Input.GetButton("Fire1") && !ClickScreen.catchClickEvent )
+        if (Input.GetButton("Fire1")/** && !ClickScreen.catchClickEvent**/ )
         {
+           // print("FixedUpdate");
             fire();
         }
 
@@ -30,6 +31,8 @@ public class Bow2 : AbstractWeapon
         }else{
             arrowPosition = transform.position;
         }
+
+
         GameObject arrowObj = Instantiate(Arrow, arrowPosition, transform.rotation) as GameObject;
         AbstractArrow arrow = arrowObj.GetComponent<AbstractArrow>();
         

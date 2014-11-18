@@ -9,7 +9,7 @@ public class ClickScreen : MonoBehaviour {
     // Use this for initialization
 
     //仅当UI没有处理点击事件的时候才能发射武器
-    public static bool catchClickEvent = true;
+    //public static bool catchClickEvent = true;
 
     //private static ClickScreen m_instance = null;
 
@@ -77,12 +77,12 @@ public class ClickScreen : MonoBehaviour {
 
                 }
 
-                catchClickEvent = true;
+                //catchClickEvent = true;
             }
             else
             {
                 //print("什么也没有碰到");
-                catchClickEvent = false;
+                //catchClickEvent = false;
                 unChoose();
             }
 

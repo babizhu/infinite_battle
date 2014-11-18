@@ -17,7 +17,7 @@ public class Pause : IClickEvent
             timeScale = 0;
         }
         Time.timeScale = timeScale;
-        print("time=" + timeScale);
+        
         return false;
     }
 
