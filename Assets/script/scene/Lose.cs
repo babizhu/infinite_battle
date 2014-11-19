@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Dead : MonoBehaviour {
+public class Lose : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,6 +12,8 @@ public class Dead : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
+            print("AbstractMonster.count" + AbstractMonster.count);
+            AbstractMonster.count = 0;
             Application.LoadLevel("battle");
         }
 	}

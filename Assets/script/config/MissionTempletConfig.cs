@@ -90,9 +90,11 @@ string filePath = "file://" + UnityEngine.Application.streamingAssetsPath + file
                 string[] arr = x.InnerText.Split(',');
                 int monsterId = int.Parse(arr[0]);
                 int position = int.Parse(arr[1]);
+                float xOffset = float.Parse(arr[2]);
                 MonsterWithPosition mwp = new MonsterWithPosition();
                 mwp.MonsterTemplet = MonsterTempletConfig.getInstance().get(monsterId);
                 mwp.Row = position;
+                mwp.XOffset = xOffset;
                 waveTemplet.MonsterList.Add(mwp);
                 
             }

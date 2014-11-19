@@ -8,6 +8,7 @@ public class MonsterWithPosition
 {
     private MonsterTemplet monsterTemplet;
     private int row;
+    private float xOffset;
 
     public MonsterTemplet MonsterTemplet
     {
@@ -22,7 +23,12 @@ public class MonsterWithPosition
 
     public override string ToString()
     {
-        string result = "MonsterTemplet=" + MonsterTemplet.Id + ",row=" + row;
+        string result = "MonsterTemplet=" + MonsterTemplet.Id + ",row=" + row + ",xOffset=" + XOffset;
         return result;
+    }
+
+    public float XOffset {
+        set { xOffset = value; }
+        get { return xOffset; }
     }
 }

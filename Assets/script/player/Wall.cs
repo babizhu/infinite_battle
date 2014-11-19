@@ -3,12 +3,13 @@ using System.Collections;
 
 public class Wall : MonoBehaviour {
     public GameObject HpBar;
-    private int hp =100;
+    private int hp = PlayerData.getInstance().WallHp;
     private ScrollBar bar;
 
 	// Use this for initialization
 	void Start () {
         bar = HpBar.GetComponent<ScrollBar>();
+        //hp = 1000;
 	}
 	
 	// Update is called once per frame
@@ -21,6 +22,8 @@ public class Wall : MonoBehaviour {
         get { return hp; }
     }
 
+
+
     public void defend( AbstractMonster monster )
     {
         int damage = monster.AttackDamage;
@@ -30,7 +33,7 @@ public class Wall : MonoBehaviour {
         bar.scroll(-damage);
         if (hp <= 0)
         {
-            Application.LoadLevel("dead");
+            Application.LoadLevel("lose");
             //print("你死了");
         }
     }

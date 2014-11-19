@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <arrows>
   <arrow>
-		<id>1</id>
+    <id>1</id>
+    <name>木箭</name>
+    <prefab>arrow1</prefab>
+    <attack>10</attack>
+    <speed>6</speed>
+
+  </arrow>
+
+  <arrow>
+		<id>2</id>
 		<name>黄金箭</name>
-		<prefab>arrow1</prefab>
+		<prefab>arrow2</prefab>
 		<attack>25</attack>
 		<speed>10</speed>
     
 	</arrow>
 
   <arrow>
-    <id>2</id>
+    <id>3</id>
     <name>榴弹炮</name>
     <prefab>bomb1</prefab>
     <attack>80</attack>

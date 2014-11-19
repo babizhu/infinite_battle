@@ -3,7 +3,8 @@ using System.Collections;
 
 public abstract class AbstractMonster : MonoBehaviour
 {
-
+    //当前所有的敌人
+    public static int count;
     /**
      * 被命中后发出的声音
      */
@@ -37,6 +38,17 @@ public abstract class AbstractMonster : MonoBehaviour
         }
     }
 
+    /**
+     * 一个怪兽消失了，不管是被打死，还是成功进入了墙壁
+     */
+    public void monsterDestroy()
+    {
+        count -= 1;
+        if (count == 0)
+        {
+            Application.LoadLevel("win");
+        }
+    }
        
     abstract public void die();
 

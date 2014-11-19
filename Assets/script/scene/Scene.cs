@@ -7,12 +7,12 @@ public class Scene : MonoBehaviour {
 
     private GameObject phyWeapon, magicWeapon;
 	// Use this for initialization
-    private Player player;
-	void Start () {
-        player = GameObject.Find("player").GetComponent<Player>();      
 
-        phyWeapon = buildWeapon(player.PhyWeaponTemplet, player.PhyArrowTemplet);
-        magicWeapon = buildWeapon(player.MagicWeaponTemplet, player.MagicArrowTemplet);      
+	void Start () {
+        PlayerData playerData = PlayerData.getInstance();
+
+        phyWeapon = buildWeapon(playerData.PhyWeaponTemplet, playerData.PhyArrowTemplet);
+        magicWeapon = buildWeapon(playerData.MagicWeaponTemplet, playerData.MagicArrowTemplet);      
 
         //初始，魔法武器隐藏在后面，不显示
         magicWeapon.transform.localEulerAngles = new Vector3(0, 0, 180);
@@ -25,7 +25,7 @@ public class Scene : MonoBehaviour {
 
     private GameObject buildWeapon(WeaponTemplet templet,ArrowTemplet arrowTemplet)
     {
-        GameObject weaponObj = Instantiate(Resources.Load(templet.Prefab), new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        GameObject weaponObj = Instantiate(Resources.Load(templet.Prefab), Vector3.zero, Quaternion.identity) as GameObject;
         weaponObj.transform.parent = weaponGroup.transform;
         weaponObj.transform.localPosition = templet.Position;
         AbstractWeapon weapon = weaponObj.GetComponent<AbstractWeapon>();

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <weapons>
+
   <weapon>
-		<id>1</id>
-		<name>黄金弓箭</name>
+    <id>1</id>
+    <name>木弓</name>
+    <prefab>bow1</prefab>
+    <weaponPosX>0.75</weaponPosX>
+    <weaponPosY>0</weaponPosY>
+    <coolDown>0.3</coolDown>
+    <needSp>0</needSp>
+  </weapon>
+  <weapon>
+		<id>2</id>
+		<name>黄金弓</name>
 		<prefab>bow2</prefab>
     <weaponPosX>0.75</weaponPosX>
     <weaponPosY>0</weaponPosY>
@@ -11,7 +21,7 @@
 	</weapon>
 
   <weapon>
-    <id>2</id>
+    <id>3</id>
     <name>激光炮台</name>
     <prefab>magicWeapon1</prefab>
     <weaponPosX>-1.2</weaponPosX>

@@ -45,6 +45,7 @@ public class Monster1 : AbstractMonster {
 
     public override void die()
     {
+        monsterDestroy();
         Destroy(gameObject);
         Sound.getInstance().play(hit);
         player.addScore(3);
@@ -55,7 +56,7 @@ public class Monster1 : AbstractMonster {
     public override void attack()
     {
         // AudioSource.PlayClipAtPoint(hitTarget, new Vector3());
-
+        monsterDestroy();
         Sound.getInstance().play(hit);
 
         player.defend(this);
