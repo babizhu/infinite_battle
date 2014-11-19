@@ -13,7 +13,7 @@ public class Win : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             print("AbstractMonster.count" + AbstractMonster.count);
-            //AbstractMonster.count = 0;
+            PlayerData.getInstance().CurrentMission += 1;
             Application.LoadLevel("battle");
         }
 	}

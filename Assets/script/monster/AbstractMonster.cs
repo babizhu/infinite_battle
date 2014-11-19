@@ -46,6 +46,7 @@ public abstract class AbstractMonster : MonoBehaviour
         count -= 1;
         if (count == 0)
         {
+
             Application.LoadLevel("win");
         }
     }
