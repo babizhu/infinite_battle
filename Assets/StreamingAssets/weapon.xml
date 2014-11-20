@@ -28,15 +28,5 @@
     <weaponPosY>0</weaponPosY>
     <coolDown>0.8</coolDown>
     <needSp>40</needSp>
-  </weapon>
-  
-  <!--<weapon>
-		<id>2</id>
-		<name>激光炮</name>
-		<prefab>magicBomb</prefab>
-    <attack>100</attack>
-    <speed>10</speed>
-    <posX>0</posX>
-    <posY>0</posY>
-	</weapon>-->
+  </weapon> 
 </weapons>

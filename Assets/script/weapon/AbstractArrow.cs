@@ -49,6 +49,5 @@ public abstract class AbstractArrow : MonoBehaviour {
     {
         speed = templet.Speed;
         attack = templet.Attack;
-        //offsetPosition = templet.OffsetPosition;
     }  
 }

@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\script\config\ArrowTemplet.cs" />
      <Compile Include="Assets\script\config\ArrowTempletConfig.cs" />
+     <Compile Include="Assets\script\config\BigBombTemplet.cs" />
+     <Compile Include="Assets\script\config\BigBombTempletConfig.cs" />
      <Compile Include="Assets\script\config\MissionTemplet.cs" />
      <Compile Include="Assets\script\config\MissionTempletConfig.cs" />
      <Compile Include="Assets\script\config\MonsterTemplet.cs" />
@@ -75,18 +77,25 @@
      <Compile Include="Assets\script\test\XmlTest.cs" />
      <Compile Include="Assets\script\trap\FireTrap.cs" />
      <Compile Include="Assets\script\trap\FireTrapClick.cs" />
+     <Compile Include="Assets\script\ui\IceBigBombButton.cs" />
      <Compile Include="Assets\script\ui\Pause.cs" />
+     <Compile Include="Assets\script\ui\SwitchWeapon.cs" />
      <Compile Include="Assets\script\weapon\AbstractArrow.cs" />
      <Compile Include="Assets\script\weapon\AbstractWeapon.cs" />
      <Compile Include="Assets\script\weapon\Arrow1.cs" />
      <Compile Include="Assets\script\weapon\Bow2.cs" />
      <Compile Include="Assets\script\weapon\Bow3.cs" />
      <Compile Include="Assets\script\weapon\MagicBomb.cs" />
-     <Compile Include="Assets\script\weapon\SwitchWeapon.cs" />
+     <Compile Include="Assets\script\weapon\bigBomb\AbstractBigBomb.cs" />
+     <Compile Include="Assets\script\weapon\bigBomb\IceBigBomb.cs" />
      <None Include="Assets\StreamingAssets\arrow.xml" />
      <None Include="Assets\StreamingAssets\weapon.xml" />
      <None Include="Assets\StreamingAssets\mission.xml" />
+     <None Include="Assets\StreamingAssets\bigBomb.xml" />
      <None Include="Assets\StreamingAssets\monster.xml" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

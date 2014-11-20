@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<weapons>
+
+  <weapon>
+    <id>1</id>
+    <name>冰封之雨</name>
+    <prefab>iceBigBomb</prefab>
+    <arg>1</arg><!--冰封时间(秒)-->
+    <needSp>0</needSp>
+  </weapon>
+  <weapon>
+		<id>2</id>
+		<name>原子弹</name>
+		<prefab>atomBigBomb</prefab>
+    <arg>50</arg>    <!--对每个怪的伤害-->
+    <needSp>0</needSp>
+	</weapon>
+</weapons>
