@@ -6,6 +6,7 @@ using System.Collections;
  */
 public class IceBigBomb : AbstractBigBomb {
 
+    //public GameObject animator;
     /**
      * 冰冻时间
      */
@@ -18,6 +19,9 @@ public class IceBigBomb : AbstractBigBomb {
 
     private IEnumerator fire()
     {
+        //GameObject animationObj =  as GameObject;
+        //Destroy(Instantiate(animator), 0.6f);
+
         Collider2D[] collidedObj = Physics2D.OverlapAreaAll( pointA,pointB);
         float[] speed = new float[collidedObj.Length];
         //print(collidedObj.Length);

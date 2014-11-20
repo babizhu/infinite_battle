@@ -8,7 +8,7 @@ public class IceBigBombButton : IClickEvent
     public override bool click(GameObject prevChoose)
     {
 
-        GameObject obj = Instantiate(iceBigBomb) as GameObject;
+        Instantiate(iceBigBomb);
         
 
         return false;
