@@ -35,6 +35,11 @@ public class MagicBomb : AbstractArrow
             GameObject explosion = Instantiate(BombExplosion, transform.localPosition, Quaternion.identity) as GameObject;
             Destroy(explosion, 0.6f);
             Collider2D[] collidedObj = Physics2D.OverlapCircleAll(transform.position, 1);
+            Vector3 debugPos = transform.position;
+            debugPos.x += 10;
+            debugPos.y += 10;
+            Debug.DrawLine(transform.position, debugPos, Color.red,1);
+            //Debug.Log("=================");
             
             //print(collidedObj.Length);
             foreach (Collider2D collider in collidedObj)

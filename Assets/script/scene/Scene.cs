@@ -10,6 +10,7 @@ public class Scene : MonoBehaviour {
 
 	void Start () {
         PlayerData playerData = PlayerData.getInstance();
+        playerData.init();
 
         phyWeapon = buildWeapon(playerData.PhyWeaponTemplet, playerData.PhyArrowTemplet);
         magicWeapon = buildWeapon(playerData.MagicWeaponTemplet, playerData.MagicArrowTemplet);      

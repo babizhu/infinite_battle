@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerData {
     private static PlayerData m_instance = null;
-
+    private bool isInit = false;
     /**
      */ 
     private int wallHp;
@@ -44,7 +44,7 @@ public class PlayerData {
 
     private PlayerData()
     {
-        init();
+        
     }
     public static PlayerData getInstance()
     {
@@ -57,8 +57,12 @@ public class PlayerData {
 
     public void init()
     {
- 
 
+        if (isInit)
+        {
+            return;
+        }
+        isInit = true;
         loadAll();
 
         phyWeaponTemplet = WeaponTempletConfig.getInstance().get(PhyWeaponId);
