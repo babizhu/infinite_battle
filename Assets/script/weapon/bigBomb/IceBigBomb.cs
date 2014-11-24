@@ -32,7 +32,7 @@ public class IceBigBomb : AbstractBigBomb {
             {
                 AbstractMonster monster = collider.GetComponent<AbstractMonster>();
                 speed[i++] = monster.Speed;
-                print("monster.Speed=" + monster.Speed);
+                //print("monster.Speed=" + monster.Speed);
                 monster.Speed = 0;
             }
         }

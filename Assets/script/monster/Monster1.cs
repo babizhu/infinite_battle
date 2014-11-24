@@ -8,8 +8,12 @@ public class Monster1 : AbstractMonster {
     private Material material;
 	// Use this for initialization
 	void Start () {
-        player = GameObject.Find("player").GetComponent<Player>();
         material = gameObject.renderer.material;
+        player = GameObject.Find("player").GetComponent<Player>();
+
+        healthBar = findHpBar();
+        // Getting the intial scale of the healthbar (whilst the player has full health).
+        healthScale = healthBar.transform.localScale;
  //       SetPostion();
 	}
 	
@@ -45,24 +49,41 @@ public class Monster1 : AbstractMonster {
 
     public override void die()
     {
-        monsterDestroy();
+        
         Destroy(gameObject);
         Sound.getInstance().play(hit);
         player.addScore(3);
+        checkMissionIsEnd();
         
         
+    }
+
+    private void checkMissionIsEnd()
+    {
+        if (monsterDestroy())
+        {
+            StartCoroutine(loadWinScene());
+        }
+    }
+
+    private IEnumerator loadWinScene()
+    {
+        Application.LoadLevel("win");
+        print(1111111111);
+        yield return new WaitForSeconds(1);
+        print(222222222222);
     }
 
     public override void attack()
     {
         // AudioSource.PlayClipAtPoint(hitTarget, new Vector3());
-        monsterDestroy();
+        
         Sound.getInstance().play(hit);
 
         player.defend(this);
         //Player.getInstance().addScore(3);
         Destroy(gameObject);
-
+        checkMissionIsEnd();
     }
 
     public override void defend(AbstractArrow arrow)
@@ -97,6 +118,7 @@ public class Monster1 : AbstractMonster {
         pos = transform.localPosition;
         pos.x -= 0.1f;
         transform.localPosition = pos;
+        updateHealthBar();
         //ani.speed = 1;
         //gameObject.animation.Stop();
         //foreach (AnimationState anim in gameObject.animation)
@@ -112,5 +134,18 @@ public class Monster1 : AbstractMonster {
 
     }
 
-
+    /**
+     * 在子项中查找血条
+     */
+    private SpriteRenderer findHpBar()
+    {
+        foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
+        {
+            if (sr.name == "healthBar")
+            {
+                return sr;
+            }
+        }
+        return null;
+    }
 }

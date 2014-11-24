@@ -3,12 +3,14 @@ using System.Collections;
 
 public class Wall : MonoBehaviour {
     public GameObject HpBar;
-    private int hp = PlayerData.getInstance().WallHp;
+    private int hp;
     private ScrollBar bar;
 
 	// Use this for initialization
 	void Start () {
         bar = HpBar.GetComponent<ScrollBar>();
+        hp = PlayerData.getInstance().WallHp;
+        
         //hp = 1000;
 	}
 	
@@ -29,6 +31,8 @@ public class Wall : MonoBehaviour {
         int damage = monster.AttackDamage;
         //print(hp);
         hp -= damage;
+
+        //print("damage=" + damage + " hp=" + hp);
         
         bar.scroll(-damage);
         if (hp <= 0)

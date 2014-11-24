@@ -6,12 +6,19 @@ public class Scene : MonoBehaviour {
     public GameObject weaponGroup,switchWeapon;
 
     private GameObject phyWeapon, magicWeapon;
+
+    private PlayerData playerData;
 	// Use this for initialization
 
-	void Start () {
-        PlayerData playerData = PlayerData.getInstance();
+    void Awake()
+    {
+        playerData = PlayerData.getInstance();
         playerData.init();
 
+
+    }
+	void Start () {
+        
         phyWeapon = buildWeapon(playerData.PhyWeaponTemplet, playerData.PhyArrowTemplet);
         magicWeapon = buildWeapon(playerData.MagicWeaponTemplet, playerData.MagicArrowTemplet);      
 

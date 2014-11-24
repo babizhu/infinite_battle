@@ -12,7 +12,7 @@ public class Win : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            print("AbstractMonster.count" + AbstractMonster.count);
+            //print("AbstractMonster.count" + AbstractMonster.count);
             PlayerData.getInstance().CurrentMission += 1;
             Application.LoadLevel("battle");
         }
