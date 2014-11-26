@@ -65,7 +65,23 @@ public class ScrollBar : MonoBehaviour
     public void scroll(int changeValue)
     {        
         StartCoroutine(doScroll(changeValue));
+        //doScroll1(changeValue);
     }
+
+    //private void doScroll1(int changeValue)
+    //{
+        
+    //    CurrentValue += changeValue;
+    //    CurrentValue = Mathf.Max(CurrentValue, 0);
+    //    CurrentValue = Mathf.Min(CurrentValue, MaxValue);
+        
+
+    //    float rate = (float)CurrentValue / MaxValue;
+    //    float to = MaxScaleX * rate;
+    //    float from = bodyTransform.localScale.x;
+    //    bodyTransform.localScale = new Vector3( MaxScaleX * (float) CurrentValue / MaxValue, 1, 1);
+    //    //bodyCurrentScale.transform.localScale = new Vector3(healthScale.x * (float)Hp / maxHp, 1, 1);
+    //}
 
     private IEnumerator doScroll(int changeValue)
     {

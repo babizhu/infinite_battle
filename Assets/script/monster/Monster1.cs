@@ -6,15 +6,12 @@ public class Monster1 : AbstractMonster {
 
     private Player player;
     private Material material;
-	// Use this for initialization
+    
+    
 	void Start () {
         material = gameObject.renderer.material;
         player = GameObject.Find("player").GetComponent<Player>();
-
-        healthBar = findHpBar();
-        // Getting the intial scale of the healthbar (whilst the player has full health).
-        healthScale = healthBar.transform.localScale;
- //       SetPostion();
+        healthBar = GetComponentInChildren<HealthBar>();
 	}
 	
 	// Update is called once per frame
@@ -53,26 +50,10 @@ public class Monster1 : AbstractMonster {
         Destroy(gameObject);
         Sound.getInstance().play(hit);
         player.addScore(3);
-        checkMissionIsEnd();
-        
-        
+        monsterDestroy();
     }
 
-    private void checkMissionIsEnd()
-    {
-        if (monsterDestroy())
-        {
-            StartCoroutine(loadWinScene());
-        }
-    }
-
-    private IEnumerator loadWinScene()
-    {
-        Application.LoadLevel("win");
-        print(1111111111);
-        yield return new WaitForSeconds(1);
-        print(222222222222);
-    }
+    
 
     public override void attack()
     {
@@ -83,7 +64,7 @@ public class Monster1 : AbstractMonster {
         player.defend(this);
         //Player.getInstance().addScore(3);
         Destroy(gameObject);
-        checkMissionIsEnd();
+        monsterDestroy();
     }
 
     public override void defend(AbstractArrow arrow)
@@ -103,22 +84,28 @@ public class Monster1 : AbstractMonster {
         //print("enemy hp is " + monster.Hp);
     }
 
+
+    /**
+     * 受到攻击往后退一下，在一次射出三根黄金箭的 情况下，碰撞检测有些地方好像会失效
+     */
     private IEnumerator blink()
     {
+
+        //setHeathEnabled(true);
         //print(material.color);
         //float tempSpeed = Speed;
         material.color = Color.red;
         //Speed = 0;
         //Animator ani = GetComponent<Animator>();
         //ani.speed = 0;
-        Vector3 pos = transform.localPosition;
-        pos.x += 0.1f;
-        transform.localPosition = pos;
+        //Vector3 pos = transform.localPosition;
+        //pos.x += 0.1f;
+        //transform.localPosition = pos;
         yield return new WaitForSeconds(0.04f);
-        pos = transform.localPosition;
-        pos.x -= 0.1f;
-        transform.localPosition = pos;
-        updateHealthBar();
+        //pos = transform.localPosition;
+        //pos.x -= 0.1f;
+        //transform.localPosition = pos;
+        healthBar.updateHealthBar( (float)Hp/MaxHp);
         //ani.speed = 1;
         //gameObject.animation.Stop();
         //foreach (AnimationState anim in gameObject.animation)
@@ -131,21 +118,9 @@ public class Monster1 : AbstractMonster {
         
         material.color = Color.white;
         //Speed = tempSpeed;
-
+        //yield return new WaitForSeconds(0.15f);
+        //setHeathEnabled(false);
     }
 
-    /**
-     * 在子项中查找血条
-     */
-    private SpriteRenderer findHpBar()
-    {
-        foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
-        {
-            if (sr.name == "healthBar")
-            {
-                return sr;
-            }
-        }
-        return null;
-    }
+    
 }

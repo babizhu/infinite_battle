@@ -37,8 +37,18 @@ public class Wall : MonoBehaviour {
         bar.scroll(-damage);
         if (hp <= 0)
         {
-            Application.LoadLevel("lose");
-            //print("你死了");
+            StartCoroutine(loadLoseScene());
         }
+    }
+
+    /**
+     * 切换失败场景，好像无需延时
+     */
+    private IEnumerator loadLoseScene()
+    {
+        //print(1111111111);
+        yield return new WaitForSeconds(0.1f);
+        Application.LoadLevel("lose");
+        //print(222222222222);
     }
 }

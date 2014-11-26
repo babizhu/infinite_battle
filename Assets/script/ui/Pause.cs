@@ -21,6 +21,11 @@ public class Pause : IClickEvent
         return false;
     }
 
+    public static bool IS_PAUSE()
+    {
+        return (timeScale == 0);
+    }
+
     public override void unClick()
     {
         

@@ -34,7 +34,7 @@ public class MonsterSpawn : MonoBehaviour
         foreach (WaveTemplet wt in missionTemplet.Waves)
         {
             totalSecond += wt.DelaySecond;
-            AbstractMonster.count += wt.MonsterList.Count;//这一关总的敌人个数
+            AbstractMonster.MONSTER_COUNT += wt.MonsterList.Count;//这一关总的敌人个数
             
         }
         monsterBar.CurrentValue = monsterBar.MaxValue = totalSecond;
@@ -50,8 +50,20 @@ public class MonsterSpawn : MonoBehaviour
             spawnWave( wt );
         }
 
+        while (true)
+        {
+            if (AbstractMonster.MONSTER_COUNT == 0)
+            {
+                yield return StartCoroutine(loadWinScene());
+            }
+            else
+            {
+                yield return new WaitForEndOfFrame();
+            }
+        }
 
     }
+
 
     private void spawnWave(WaveTemplet wt)
     {
@@ -66,8 +78,20 @@ public class MonsterSpawn : MonoBehaviour
             xOffset[mp.Row] += 1;
             AbstractMonster monster = (Instantiate(Resources.Load(t.Prefab), pos, Quaternion.identity) as GameObject).GetComponent<AbstractMonster>();
             monster.applyTemplet(t);
-
             
         }
+
+
+    }
+
+    /**
+     * 切换胜利场景
+     */
+    private IEnumerator loadWinScene()
+    {
+        //print(1111111111);
+        yield return new WaitForSeconds(1.5f);
+        Application.LoadLevel("win");
+        //print(222222222222);
     }
 }

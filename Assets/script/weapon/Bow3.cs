@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/**
+ * 这是很nb的三分箭
+ */
 public class Bow3 : Bow2 {
 
     protected override void doNormalAttack()

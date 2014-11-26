@@ -160,8 +160,8 @@ public class PlayerData {
         currentMission = PlayerPrefs.GetInt("currentMission", 1);
         maxMission = PlayerPrefs.GetInt("maxMission", 1);
 
-        phyArrowId = PlayerPrefs.GetInt("phyArrowId", 1);
-        phyWeaponId = PlayerPrefs.GetInt("phyWeaponId", 1);
+        phyArrowId = PlayerPrefs.GetInt("phyArrowId", 2);
+        phyWeaponId = PlayerPrefs.GetInt("phyWeaponId", 2);
 
         magicArrowId = PlayerPrefs.GetInt("magicArrowId", 3);
         magicWeaponId = PlayerPrefs.GetInt("magicWeaponId", 3);

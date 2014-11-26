@@ -24,6 +24,8 @@ string filePath = "file://" + UnityEngine.Application.streamingAssetsPath + file
     private Dictionary<int, MissionTemplet> data = new Dictionary<int, MissionTemplet>();
     private static MissionTempletConfig m_instance = null;
 
+    private int maxId = 0;
+
     private MissionTempletConfig()
     {
         init();
@@ -66,6 +68,11 @@ string filePath = "file://" + UnityEngine.Application.streamingAssetsPath + file
                 if (x1.Name == "name") t.Name = x1.InnerText;
                 else if (x1.Name == "id") t.Id = int.Parse(x1.InnerText);
                 else if (x1.Name == "wave") t.Waves.Add(parseWave(x1));
+
+                if (t.Id > maxId)
+                {
+                    maxId = t.Id;
+                }
             }
             //Debug.Log(t.ToString());
             data.Add(t.Id, t);
@@ -109,6 +116,11 @@ string filePath = "file://" + UnityEngine.Application.streamingAssetsPath + file
     {
         
         return data[id];
+    }
+
+    public int getMaxId()
+    {
+        return maxId;
     }
 
 }

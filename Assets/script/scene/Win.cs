@@ -13,7 +13,10 @@ public class Win : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             //print("AbstractMonster.count" + AbstractMonster.count);
-            PlayerData.getInstance().CurrentMission += 1;
+            if (PlayerData.getInstance().CurrentMission < MissionTempletConfig.getInstance().getMaxId())
+            {
+                PlayerData.getInstance().CurrentMission += 1;
+            }
             Application.LoadLevel("battle");
         }
 	}

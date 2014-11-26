@@ -12,15 +12,17 @@ public class Bow2 : AbstractWeapon
     void Start(){
         player = GameObject.Find("player").GetComponent<Player>();
     }
-    void FixedUpdate()
+    void Update()
     {
-        if (Input.GetButton("Fire1")/** && !ClickScreen.catchClickEvent**/ )
+        if (Input.GetButton("Fire1") && !Pause.IS_PAUSE()/** && !ClickScreen.catchClickEvent**/ )
         {
            // print("FixedUpdate");
             fire();
         }
 
     }
+
+
 
     protected override void doNormalAttack()
     {

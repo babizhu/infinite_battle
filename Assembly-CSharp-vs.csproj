@@ -61,6 +61,7 @@
      <Compile Include="Assets\script\input\ClickScreen.cs" />
      <Compile Include="Assets\script\input\IClickEvent.cs" />
      <Compile Include="Assets\script\input\IClickEvent2.cs" />
+     <Compile Include="Assets\script\misc\HealthBar.cs" />
      <Compile Include="Assets\script\misc\ScrollBar.cs" />
      <Compile Include="Assets\script\misc\ShowStatus.cs" />
      <Compile Include="Assets\script\mission\MonsterSpawn.cs" />
