@@ -7,6 +7,7 @@
     <prefab>iceBigBomb</prefab>
     <arg>1</arg><!--冰封时间(秒)-->
     <needSp>0</needSp>
+    <coldDown>5</coldDown>
   </weapon>
   <weapon>
 		<id>2</id>
@@ -14,5 +15,6 @@
 		<prefab>atomBigBomb</prefab>
     <arg>50</arg>    <!--对每个怪的伤害-->
     <needSp>0</needSp>
+    <coldDown>5</coldDown>
 	</weapon>
 </weapons>

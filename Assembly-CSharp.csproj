@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MaskTest.cs" />
      <Compile Include="Assets\script\config\ArrowTemplet.cs" />
      <Compile Include="Assets\script\config\ArrowTempletConfig.cs" />
      <Compile Include="Assets\script\config\BigBombTemplet.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\script\input\ClickScreen.cs" />
      <Compile Include="Assets\script\input\IClickEvent.cs" />
      <Compile Include="Assets\script\input\IClickEvent2.cs" />
+     <Compile Include="Assets\script\misc\CameraShake.cs" />
      <Compile Include="Assets\script\misc\HealthBar.cs" />
      <Compile Include="Assets\script\misc\ScrollBar.cs" />
      <Compile Include="Assets\script\misc\ShowStatus.cs" />
@@ -74,6 +76,23 @@
      <Compile Include="Assets\script\scene\Lose.cs" />
      <Compile Include="Assets\script\scene\Scene.cs" />
      <Compile Include="Assets\script\scene\Win.cs" />
+     <Compile Include="Assets\script\skillMask\CircularMaskEffect\CircularMaskEffect.cs" />
+     <Compile Include="Assets\script\skillMask\CircularMaskEffect\CircularMaskEffectUpdate\CircularMaskEffectUpdate.cs" />
+     <Compile Include="Assets\script\skillMask\MaskEffect.cs" />
+     <Compile Include="Assets\script\skillMask\MaskEffectUpdate.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffect.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdate.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateCircle.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateSideToSide\RectMaskEffectUpdateBToT.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateSideToSide\RectMaskEffectUpdateLToR.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateSideToSide\RectMaskEffectUpdateRToL.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateSideToSide\RectMaskEffectUpdateSideToSide.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateSideToSide\RectMaskEffectUpdateTToB.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateVertexToVertex\RectMaskEffectUpdateLBToRT.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateVertexToVertex\RectMaskEffectUpdateLTToRB.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateVertexToVertex\RectMaskEffectUpdateRBToLT.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateVertexToVertex\RectMaskEffectUpdateRTToLB.cs" />
+     <Compile Include="Assets\script\skillMask\RectMaskEffect\RectMaskEffectUpdate\RectMaskEffectUpdateVertexToVertex\RectMaskEffectUpdateVertexToVertex.cs" />
      <Compile Include="Assets\script\sound\Sound.cs" />
      <Compile Include="Assets\script\test\XmlTest.cs" />
      <Compile Include="Assets\script\trap\FireTrap.cs" />
@@ -91,7 +110,9 @@
      <Compile Include="Assets\script\weapon\bigBomb\IceBigBomb.cs" />
      <None Include="Assets\StreamingAssets\arrow.xml" />
      <None Include="Assets\StreamingAssets\weapon.xml" />
+     <None Include="Assets\shader\AlphaMask.shader" />
      <None Include="Assets\StreamingAssets\mission.xml" />
+     <None Include="Assets\shader\MaskEffect.shader" />
      <None Include="Assets\StreamingAssets\bigBomb.xml" />
      <None Include="Assets\StreamingAssets\monster.xml" />
  <Reference Include="UnityEngine.UI">

@@ -11,19 +11,23 @@ public class IceBigBomb : AbstractBigBomb {
      * 冰冻时间
      */
     private static float iceSecond = 2f;
+    private float[] speed;
+    private Collider2D[] collidedObj;
+
+    private Animator anim;
 	// Use this for initialization
 	void Start () {
-
-        StartCoroutine(fire());
+        anim = GetComponent<Animator>();
+        fire();
 	}
 
-    private IEnumerator fire()
+    private void fire()
     {
         //GameObject animationObj =  as GameObject;
         //Destroy(Instantiate(animator), 0.6f);
-
-        Collider2D[] collidedObj = Physics2D.OverlapAreaAll( pointA,pointB);
-        float[] speed = new float[collidedObj.Length];
+        anim.Play("iceBigBomb");
+        collidedObj = Physics2D.OverlapAreaAll( pointA,pointB);
+        speed = new float[collidedObj.Length];
         //print(collidedObj.Length);
         int i = 0;
         foreach (Collider2D collider in collidedObj)
@@ -38,19 +42,29 @@ public class IceBigBomb : AbstractBigBomb {
         }
 
         
-        yield return new WaitForSeconds(iceSecond);
+        //yield return new WaitForSeconds(iceSecond);
 
-        i = 0;
-        
+        //i = 0;
+        //抖动屏幕
+        CameraShake shake = Camera.main.camera.GetComponent<CameraShake>();
+        shake.shake();
+
         //恢复怪物的原始速度
+       
+        Invoke("resetEffect", iceSecond);
+    }
+
+    void resetEffect()
+    {
+        int i = 0;
         foreach (Collider2D collider in collidedObj)
         {
             if (collider != null && collider.CompareTag("monster"))
             {
                 AbstractMonster monster = collider.GetComponent<AbstractMonster>();
                 //= monster.Speed;
-                monster.Speed =  speed[i++];
-                
+                monster.Speed = speed[i++];
+
             }
         }
         Destroy(gameObject);

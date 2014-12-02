@@ -12,7 +12,7 @@ public class Lose : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            print("AbstractMonster.count" + AbstractMonster.MONSTER_COUNT);
+            //print("AbstractMonster.count" + AbstractMonster.MONSTER_COUNT);
             AbstractMonster.MONSTER_COUNT = 0;
             Application.LoadLevel("battle");
         }
