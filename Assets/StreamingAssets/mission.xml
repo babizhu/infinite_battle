@@ -87,5 +87,74 @@
     </wave>
   </mission>
 
+  <mission>
+    <id>4</id>
+    <name>教学关卡4</name>
+    <wave>
+      <delaySecond>1</delaySecond>
+      <!--怪物id,出现的行,x轴的偏移量-->
+      <monster>1,0,0</monster>
+      <monster>1,1,-0.4</monster>
+      <monster>1,2,-0.8</monster>
+      <monster>1,3,-0.4</monster>
+      <monster>1,4,0</monster>
+    </wave>
+    <wave>
+      <delaySecond>2</delaySecond>
+      <monster>1,3,0</monster>
+      <monster>1,4,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,3,0</monster>
+    </wave>
+    <wave>
+      <delaySecond>3</delaySecond>
+      <monster>1,3,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,3,0</monster>
+    </wave>
+    <wave>
+      <delaySecond>4</delaySecond>
+      <monster>1,3,0</monster>
+      <monster>1,4,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,0,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,2,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,3,0</monster>
+    </wave>
+    <wave>
+      <delaySecond>5</delaySecond>
+      <monster>1,0,0</monster>
+      <monster>1,1,0</monster>
+      <monster>1,2,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,4,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,1,0</monster>
+      <monster>1,0,0</monster>
+      <monster>1,2,0</monster>
+      <monster>1,3,0</monster>
+    </wave>
+    <wave>
+      <delaySecond>3</delaySecond>
+      <monster>1,0,0</monster>
+      <monster>1,1,0</monster>
+      <monster>1,2,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,4,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,3,0</monster>
+      <monster>1,1,0</monster>
+      <monster>1,0,0</monster>
+      <monster>1,2,0</monster>
+      <monster>1,3,0</monster>
+    </wave>
+  </mission>
+
   
 </missions>
