@@ -37,13 +37,12 @@ public class CameraShake : MonoBehaviour
 
 
 
-            print(3);
+            
             cameraTransform.position = _currentPosition + Vector3.one * radio;
             yield return new WaitForSeconds(ShakeCD);
         }
 
         cameraTransform.position = _currentPosition;
 
-        print(4334);
     }
 }

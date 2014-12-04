@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\MaskTest.cs" />
+     <Compile Include="Assets\newMask.cs" />
      <Compile Include="Assets\script\config\ArrowTemplet.cs" />
      <Compile Include="Assets\script\config\ArrowTempletConfig.cs" />
      <Compile Include="Assets\script\config\BigBombTemplet.cs" />
@@ -97,6 +98,9 @@
      <Compile Include="Assets\script\test\XmlTest.cs" />
      <Compile Include="Assets\script\trap\FireTrap.cs" />
      <Compile Include="Assets\script\trap\FireTrapClick.cs" />
+     <Compile Include="Assets\script\ui\BigBombButtonMask.cs" />
+     <Compile Include="Assets\script\ui\Buttons.cs" />
+     <Compile Include="Assets\script\ui\ClickTest.cs" />
      <Compile Include="Assets\script\ui\IceBigBombButton.cs" />
      <Compile Include="Assets\script\ui\Pause.cs" />
      <Compile Include="Assets\script\ui\SwitchWeapon.cs" />
